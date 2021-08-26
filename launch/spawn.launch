@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<param name="robot_description" command="$(find hector_quadrotor_description)/urdf/quadrotor_with_realsense.gazebo.xacro"/>
+
+	<arg name ="x" default="0"/>
+	<arg name ="y" default="0"/>
+	<arg name ="z" default="0.5"/>
+
+	<node name="robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+		args="-urdf -param robot_description -model my_robot -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+	<rosparam file="$(find gazebo_robot_try1_control)/config/differential_control.yaml" command="load" />
+
+	<!-- convert joint states to TF transforms for rviz, etc -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+		<remap from="/joint_states" to="/my_robot/joint_states" />
+		<param name="publish_frequency" type="double" value="50.0" />
+	</node>
+
+	 <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+	<node name="controller_manager" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/my_robot" args="joint_state_controller Differential_back_controller" />
+
+</launch>
