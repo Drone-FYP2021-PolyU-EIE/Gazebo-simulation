@@ -16,6 +16,7 @@ class environment():
     def __init__(self):
         self.model_state_x = {}
         self.model_state_y = {}
+        self.drone_name = "quadrotor"
         # get the model name from the model name text file and store into list
         self.text_file = open("/home/iastaff/catkin_ws/src/drone/model_name.txt", "r")
         self.model = self.text_file.readlines()
@@ -24,6 +25,7 @@ class environment():
         rospy.init_node('generate_model_pos')
         self.update_model_pos = rospy.Publisher("/gazebo/set_model_state", ModelState, queue_size=1)
         self.get_model_pos = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
+        print ("Finish init")
 
     def get_obstacles_pos(self):
         self.model_pos = GetModelStateRequest()
@@ -32,9 +34,11 @@ class environment():
             self.model_state_all = self.get_model_pos(self.model_pos)
             self.model_state_x[i] = self.model_state_all.pose.position.x
             self.model_state_y[i] = self.model_state_all.pose.position.y
-
+        print ("Finish get obstacles position")
+        
     def set_obstacles_pos(self):
         self.set_state = ModelState()
+        #set the forest environment
         for i in range (len(self.model_name)):
             self.set_state.model_name = self.model_name[i]
             # set pose
@@ -49,11 +53,21 @@ class environment():
             print ("Finish reset {} position".format(self.model_name[i]))
             print ("{}    x:{}    y:{}".format(self.model_name[i],self.set_state.pose.position.x,self.set_state.pose.position.y ))
 
+    def set_drone_pos(self):
+        self.set_state = ModelState()
+        self.set_state.model_name = self.drone_name
+        self.set_state.pose.position.x = 55.0
+        self.set_state.pose.position.y = -55.0
+        self.update_model_pos.publish(self.set_state)
+        rospy.sleep(0.03)            # provide buffer time to set drone position
+        print ("Finish reset {} position".format(self.drone_name))
+        print ("{}    x:{}    y:{}".format(self.drone_name,self.set_state.pose.position.x,self.set_state.pose.position.y ))
 
 if __name__ == "__main__":
         try:
             set_environment = environment()
             set_environment.get_obstacles_pos()
             set_environment.set_obstacles_pos()
+            set_environment.set_drone_pos()
         except rospy.ROSInterruptException:
             pass
