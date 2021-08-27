@@ -46,11 +46,11 @@
           <box size="${d435_cam_depth} ${d435_cam_width} ${d435_cam_height}"/>
         </geometry>
       </collision>
-      #<inertial>
-        #<mass value="${d435_cam_mass}" />
-        #<origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0"/>
-       #<xacro:box_inertia m="${d435_cam_mass}" x="${d435_cam_depth}" y="${d435_cam_width}" z="${d435_cam_height}"/>
-      #</inertial>
+      <!--<inertial>
+        <mass value="${d435_cam_mass}" />
+        <origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0"/>
+       <xacro:box_inertia m="${d435_cam_mass}" x="${d435_cam_depth}" y="${d435_cam_width}" z="${d435_cam_height}"/>
+      </inertial>-->
     </link>
 
     <!-- camera depth joints and links -->
