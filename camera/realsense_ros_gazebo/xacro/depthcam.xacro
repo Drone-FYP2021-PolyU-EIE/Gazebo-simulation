@@ -167,7 +167,7 @@
             <stddev>0.05</stddev>
           </noise>
         </camera>
-        <always_on>0</always_on>
+        <always_on>1</always_on>
         <update_rate>90</update_rate>
         <visualize>0</visualize>
       </sensor>
@@ -189,7 +189,7 @@
             <stddev>0.05</stddev>
           </noise>
         </camera>
-        <always_on>0</always_on>
+        <always_on>1</always_on>
         <update_rate>90</update_rate>
         <visualize>0</visualize>
       </sensor>
@@ -210,7 +210,7 @@
             <stddev>0.100</stddev>
           </noise>
         </camera>
-        <always_on>0</always_on>
+        <always_on>1</always_on>
         <update_rate>90</update_rate>
         <visualize>0</visualize>
       </sensor>
