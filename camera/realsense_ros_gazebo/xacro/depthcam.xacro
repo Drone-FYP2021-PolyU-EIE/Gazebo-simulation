@@ -236,7 +236,7 @@
         <infrared2OpticalframeName>${sensor_name}_infrared2_optical_frame</infrared2OpticalframeName>
         <rangeMinDepth>0.2</rangeMinDepth>
         <rangeMaxDepth>10.0</rangeMaxDepth>
-        <pointCloud>false</pointCloud>
+        <pointCloud>true</pointCloud>
         <pointCloudTopicName>depth/color/points</pointCloudTopicName>
         <pointCloudCutoff>0.25</pointCloudCutoff>
         <pointCloudCutoffMax>9.0</pointCloudCutoffMax>
