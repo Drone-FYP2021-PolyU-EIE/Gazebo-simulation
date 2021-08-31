@@ -3,6 +3,7 @@ import time
 import rospy
 import math
 import sys
+import numpy as np
 
 #import cv2 package
 import cv2
@@ -49,9 +50,16 @@ class motion():
         # BEGIN BRIDGE
         self.depth_image = self.bridge.imgmsg_to_cv2(msg)
         # Resize the image
-        self.depth_image = cv2.resize(self.depth_image,(720,480))
-        print (type(self.depth_image))
-        print (self.depth_image)
+        self.depth_image = cv2.resize(self.depth_image,(720,480))   # 720 columns, 480 rows
+        # convert to np array with float32 format
+        self.depth_array = np.array(self.depth_image, dtype=np.float32)
+        # prepare the empty list
+        self.distance = []
+        self.distance_row = []
+        # convert the depth into visualize range
+        self.depth_image = cv2.applyColorMap(cv2.convertScaleAbs(self.depth_image, alpha=0.065), cv2.COLORMAP_JET)
+        # convert the unit to meter for every element in depth array
+        self.depth_array = self.depth_array/1000
         print ("depth callback finish")
 
     def infra1_cb(self, msg):
@@ -93,14 +101,14 @@ class motion():
             print ("upward")
 
     def show_image(self):
-        cv2.imshow("depth camera",self.depth_image)
+        cv2.imshow("depth camera",self.depth_array)
         cv2.imshow("rgb camera",self.rgb_image)
-        cv2.imshow("infra1 camera",self.infra1_image)
-        cv2.imshow("infra2 camera",self.infra2_image)
+        #cv2.imshow("infra1 camera",self.infra1_image)
+        #cv2.imshow("infra2 camera",self.infra2_image)
         cv2.waitKey(1)
 
 
-    #def image_distance(self):
+    #def get_distance(self):
         
 
 
