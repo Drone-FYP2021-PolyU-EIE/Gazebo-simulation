@@ -1,0 +1,69 @@
+<launch>
+  <arg name="gui" default="true"/>
+
+  <node name="sample_manager"
+        pkg="nodelet" type="nodelet"
+        args="manager"/>
+
+  <node name="line_segment_manager"
+        pkg="nodelet" type="nodelet"
+        args="manager" output="screen" />
+
+  <!-- Downsampling -->
+  <node name="voxelgrid"
+        pkg="nodelet" type="nodelet"
+        args="load pcl/VoxelGrid line_segment_manager"
+        output="screen">
+    <remap from="~input" to="/d435/depth/color/points" />
+    <rosparam>
+      filter_field_name: z
+      filter_limit_min: 0.0
+      filter_limit_max: 5.0
+      leaf_size: 0.01
+    </rosparam>
+  </node>
+
+  <!-- 1. Edge detector -->
+  <node name="organized_edge_detector"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/OrganizedEdgeDetector sample_manager">
+    <remap from="~input" to="/d435/depth/color/points"/>
+    <rosparam>
+      publish_normal: true
+      use_nan_boundary: true
+      use_rgb: true
+      use_straightline_detection: true
+      publish_debug_image: true
+    </rosparam>
+  </node>
+
+  <!-- 2. Normal estimation of chosen pointcloud -->
+  <!-- Use OMP to speed up the processing time-->
+  <!-- Input: a chosen point cloud from pcl detection-->
+  <!-- Output: the normal should send to normal concatenator for visualization-->
+  <node name="normal_estimation_omp"
+        pkg="nodelet" type="nodelet"
+        args="standalone jsk_pcl/NormalEstimationOMP">
+    <remap from="~input" to="/organized_edge_detector/output_occluding_edge"/>
+    <rosparam>
+      k_search: 0
+      radius_search: 0.2
+    </rosparam>
+  </node>
+
+  <!-- 3. Normal visualization -->
+  <!-- Input: the chosen point cloud from detection -->
+  <!-- Normal: results from normal estimation omp-->
+  <group if="$(arg gui)">
+    <node name="normal_concatenater"
+          pkg="nodelet" type="nodelet"
+          args="load jsk_pcl_utils/NormalConcatenater sample_manager">
+      <remap from="~input" to="/organized_edge_detector/output_occluding_edge"/>
+      <remap from="~normal" to="/normal_estimation_omp/output"/>
+    </node>
+
+    <node name="rviz"
+          pkg="rviz" type="rviz"
+          args="-d $(find drone)/rviz/edge_detector.rviz"/>
+  </group>
+</launch>
