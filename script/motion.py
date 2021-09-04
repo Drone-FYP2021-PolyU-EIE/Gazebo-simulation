@@ -38,7 +38,7 @@ class motion():
         
         self.rgb_pub = rospy.Publisher("/d435/color/region_of_interest", Image, queue_size=1)   #publishe the rostopic "/d435/color/region_of_interest"
         self.depth_pub = rospy.Publisher("/d435/depth/region_of_interest", Image, queue_size=1)   #publishe the rostopic "/d435/depth/region_of_interest"
-        self.pointcloud_pub = rospy.Publisher("/d435/fuck/pointcloud2", PointCloud2, queue_size=1)   #publishe the rostopic "/d435/depth/region_of_interest"
+        self.pointcloud_pub = rospy.Publisher("/d435/dynamic_filter/pointcloud2", PointCloud2, queue_size=1)   #publishe the rostopic "/d435/depth/region_of_interest"
         rospy.wait_for_service('/enable_motors')
         val = rospy.ServiceProxy('/enable_motors', EnableMotors)
         resp1 = val(True)
