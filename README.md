@@ -7,3 +7,5 @@
 2021-8-30 upload empty_world.world, calibrate_world.world and camera_calibration.launch to prepare the camera calibration environment
 
 2021-8-31 update motion.py to provide distance data via depth message
+
+2021-9-4 update motion.py to provide dynamic filter for the region of interest pointcloud
