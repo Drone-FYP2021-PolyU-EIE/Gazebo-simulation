@@ -35,6 +35,10 @@ class motion():
         rospy.Subscriber("/d435/depth/image_raw", Image, self.depth_cb)   #subscribe the rostopic "/d435/depth/image_raw"
         rospy.Subscriber("/d435/depth/color/points", PointCloud2, self.callback_pointcloud)   #subscribe the rostopic "/d435/depth/color/points"
         #/d435/depth/color/points is XYZRGB pointcloud
+  
+        # saved_point_cloud_XYZ to csv file
+        self.f = open("saved_point_cloud_XYZ.csv",'wb')
+        self.csv_writer = csv.writer(self.f)
         
         self.rgb_pub = rospy.Publisher("/d435/color/region_of_interest", Image, queue_size=1)   #publishe the rostopic "/d435/color/region_of_interest"
         self.depth_pub = rospy.Publisher("/d435/depth/region_of_interest", Image, queue_size=1)   #publishe the rostopic "/d435/depth/region_of_interest"
@@ -91,6 +95,7 @@ class motion():
         self.gen = point_cloud2.read_points(data,field_names=("x","y","z"), skip_nans=True)
         time.sleep(1)
         #for p in gen:
+        #    self.csv_writer.writerow(["{}".format(p[0]),"{}".format(p[1]),"{}".format(p[2])])
         #    print (" x : %.3f  y : %.3f  z : %.3f"%(p[0],p[1],p[2]))
         print ("point cloud header: {}".format(data.header))
         print ("point cloud height: {}".format(data.height))
