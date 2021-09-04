@@ -9,5 +9,6 @@
 2021-8-31 update motion.py to provide distance data via depth message
 
 2021-9-4 update motion.py to provide dynamic filter for the cropped region pointcloud and write the record the point cloud XYZ into csv file
-         upload plot_csv.py which can povide the visual animate 3d plot from csv file data
+
+2021-9-4 upload plot_csv.py which can povide the visual animate 3d plot from csv file data
 
