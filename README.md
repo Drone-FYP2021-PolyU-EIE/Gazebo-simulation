@@ -16,4 +16,4 @@
 
 2021-9-6 upload camera_capture.py which allow to press keyboard button to capture the camera frame and save it into specific folder
 
-2021-9-7 upload camera_image_callback.py which include camera callback class specially for give back D435i camera data
+2021-9-7 upload camera_image_callback.py which include camera callback class specially for return D435i camera data
