@@ -37,7 +37,7 @@
 
     <!-- D435I sensor -->
     <xacro:realsense_d435 sensor_name="d435" parent_link="base_link" rate="10" >
-      <origin rpy="0 0 1.57079632679 " xyz="0 0.1 -0.15"/>
+      <origin rpy="0 0 1.57079632679 " xyz="0 0.1 -0.19"/>
     </xacro:realsense_d435>
 
   </xacro:macro>
