@@ -11,7 +11,7 @@
     <remap from="~input/points" to="$(arg INPUT_CLOUD)" />
     <remap from="~input/box" to="$(arg INPUT_BOX)" />
     <rosparam>
-      initial_pos: [0.0, -0.05, 0.5]
+      initial_pos: [0.0, 0.0, 0.5]
       initial_rot: [0, 0, 0]
       dimension_x: 0.1
       dimension_y: 0.1
