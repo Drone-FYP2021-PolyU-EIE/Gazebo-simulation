@@ -17,3 +17,15 @@
 2021-9-6 upload camera_capture.py which allow to press keyboard button to capture the camera frame and save it into specific folder
 
 2021-9-7 upload camera_image_callback.py which include camera callback class specially for return D435i camera data
+
+2021-9-10 upload test_depth_distance.py which can detect the bounding box distance and show the marker on the image window
+2021-9-10 upload test_attention_clipper.launch which can allow input Bounding Box topic to change the point cloud ROI size 
+2021-9-10 upload attention_pose_set.py which can publish the input Bounding Box topic for test_attention_clipper.launch to change the Bounding Box size
+
+
+
+
+
+
+### Remark
+```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
