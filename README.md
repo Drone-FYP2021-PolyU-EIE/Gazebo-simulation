@@ -24,9 +24,7 @@
 
 2021-9-10 upload ```attention_pose_set.py``` which can publish the input Bounding Box topic for ```test_attention_clipper.launch``` to change the Bounding Box size
 
-
-
-
+2021-9-11 upload ```test_2d_to_3d.world```, ```test_2d_to_3d.launch``` and box (0.5m) model for testing ```2d_coordinate_to_3d_coordinate.py```
 
 
 
