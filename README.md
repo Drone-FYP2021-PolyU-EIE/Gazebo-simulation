@@ -35,6 +35,7 @@ depth distance to the 3d point [ 2d point y] =  [0      fy     v      0] [3d poi
                                                                          [1]
                                                                          
 the 3d point in rviz have a little bit error, it should be the calculated 3d point is based on the world frame as origin instead of d435 camera
+After testing, it should be not a big problem as the point will set in front of the trunk which means the front part of the trunk will be consider
 ```
 
 ### Remark
