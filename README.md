@@ -26,7 +26,14 @@
 
 2021-9-11 upload ```test_2d_to_3d.world```, ```test_2d_to_3d.launch``` and box (0.5m) model for testing ```2d_coordinate_to_3d_coordinate.py```
 
+2021-9-17 upload ```publish_marker.py``` which provide that the 2d rgb or depth image point to the 3d position rely on the below matrix
 
+```
+                               [ 2d point x]    [fx     0      u      0] [3d point x]
+depth distance to the 3d point [ 2d point y] =  [0      fy     v      0] [3d point y]
+                               [     1     ]    [0      0      1      0] [depth distance to the 3d point]
+                                                                         [1]
+```
 
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
