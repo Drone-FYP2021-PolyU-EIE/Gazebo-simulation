@@ -33,6 +33,8 @@
 depth distance to the 3d point [ 2d point y] =  [0      fy     v      0] [3d point y]
                                [     1     ]    [0      0      1      0] [depth distance to the 3d point]
                                                                          [1]
+                                                                         
+the 3d point in rviz have a little bit error, it should be the calculated 3d point is based on the world frame as origin instead of d435 camera
 ```
 
 ### Remark
