@@ -42,3 +42,4 @@ After testing, it should be not a big problem as the point will set in front of 
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
 ```attention_pose_set.py``` will set the bounding box center via ```pose.position``` but the bounding boxwill defined by ```dimensions```
+```sudo apt-get install ros-melodic-geographic-msgs``` for the hector localization
