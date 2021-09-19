@@ -1,0 +1,4 @@
+oak_trunk
+pine_trunk
+tree1_trunk
+tree2_trunk
