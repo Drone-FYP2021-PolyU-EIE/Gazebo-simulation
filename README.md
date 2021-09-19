@@ -38,6 +38,10 @@ the 3d point in rviz have a little bit error, it should be the calculated 3d poi
 After testing, it should be not a big problem as the point will set in front of the trunk which means the front part of the trunk will be consider
 ```
 
+2021-9-19 upload ```yolov4-tiny``` folder which responsible for detecting the tree and ```dynamic_filter.launch``` for launch the clipped point cloud
+
+2021-9-19 upload ```dynamic_filter.rviz``` for visualize the clipped point cloud performance
+
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
