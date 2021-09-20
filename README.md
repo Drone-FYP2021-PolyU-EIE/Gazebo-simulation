@@ -47,3 +47,4 @@ After testing, it should be not a big problem as the point will set in front of 
 
 ```attention_pose_set.py``` will set the bounding box center via ```pose.position``` but the bounding boxwill defined by ```dimensions```
 ```sudo apt-get install ros-melodic-geographic-msgs``` for the hector localization
+```/d435/depth/color/points``` is ```organized point cloud``` and datatype is ```XYZRGB```
