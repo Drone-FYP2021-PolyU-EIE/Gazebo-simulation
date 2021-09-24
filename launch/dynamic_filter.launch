@@ -29,42 +29,118 @@
 	<node name="yolov4_tiny" pkg="yolov4_tiny" type="inference_ros.py" output="screen" />
 
   <!-- 3. Implement bounding box -->
-  <!-- <arg name="INPUT_CLOUD" value="/d435/depth/color/points" />-->
-  <arg name="INPUT_CLOUD" value="/organized_edge_detector/output_rgb_edge" />
-  <arg name="INPUT_BOX_ARRAY" value="/desired/input/box_array" />
 
-  <node name="attention_clipper"
+  <!-- For oak trunk -->>
+  <!-- <arg name="INPUT_CLOUD" value="/d435/depth/color/points" />-->
+  <arg name="INPUT_CLOUD_OAK" value="/organized_edge_detector/output_rgb_edge" />
+  <arg name="INPUT_BOX_ARRAY_OAK" value="/desired_oak/input/box_array" />
+  <node name="oak_clipper"
         pkg="nodelet" type="nodelet"
         args="standalone jsk_pcl/AttentionClipper">
-    <remap from="~input/points" to="$(arg INPUT_CLOUD)" />
-    <remap from="~input/box_array" to="$(arg INPUT_BOX_ARRAY)" />
+    <remap from="~input/points" to="$(arg INPUT_CLOUD_OAK)" />
+    <remap from="~input/box_array" to="$(arg INPUT_BOX_ARRAY_OAK)" />
     <rosparam>
       use_multiple_attention: True
-      frame_id_list: ["d435_depth_optical_frame", "d435_depth_optical_frame", "d435_depth_optical_frame", "d435_depth_optical_frame"]
     </rosparam>
   </node>
-
-  <node name="extract_indices"
+  <node name="oak_indices"
         pkg="jsk_pcl_ros" type="extract_indices">
-    <remap from="~input" to="$(arg INPUT_CLOUD)" />
-    <remap from="~indices" to="/attention_clipper/output/point_indices" />
+    <remap from="~input" to="$(arg INPUT_CLOUD_OAK)" />
+    <remap from="~indices" to="/oak_clipper/output/point_indices" />
   </node>
-
-  <!-- 4. Downsampling -->
-  <node name="voxel_grid_large_scale"
+  <node name="oak_voxel_grid"
         pkg="nodelet" type="nodelet"
         args="load jsk_pcl/VoxelGridLargeScale sample_manager">
-    <remap from="~input" to="/extract_indices/output"/>
+    <remap from="~input" to="/oak_indices/output"/>
     <rosparam>
       leaf_size: 0.02
     </rosparam>
   </node>
 
+  <!-- For pine trunk -->>
+  <arg name="INPUT_CLOUD_PINE" value="/organized_edge_detector/output_rgb_edge" />
+  <arg name="INPUT_BOX_ARRAY_PINE" value="/desired_pine/input/box_array" />
+  <node name="pine_clipper"
+        pkg="nodelet" type="nodelet"
+        args="standalone jsk_pcl/AttentionClipper">
+    <remap from="~input/points" to="$(arg INPUT_CLOUD_PINE)" />
+    <remap from="~input/box_array" to="$(arg INPUT_BOX_ARRAY_PINE)" />
+    <rosparam>
+      use_multiple_attention: True
+    </rosparam>
+  </node>
+  <node name="pine_indices"
+        pkg="jsk_pcl_ros" type="extract_indices">
+    <remap from="~input" to="$(arg INPUT_CLOUD_PINE)" />
+    <remap from="~indices" to="/pine_clipper/output/point_indices" />
+  </node>
+  <node name="pine_voxel_grid"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/VoxelGridLargeScale sample_manager">
+    <remap from="~input" to="/pine_indices/output"/>
+    <rosparam>
+      leaf_size: 0.02
+    </rosparam>
+  </node>
+
+  <!-- For tree1 trunk -->>
+  <arg name="INPUT_CLOUD_TREE1" value="/organized_edge_detector/output_rgb_edge" />
+  <arg name="INPUT_BOX_ARRAY_TREE1" value="/desired_tree1/input/box_array" />
+  <node name="tree1_clipper"
+        pkg="nodelet" type="nodelet"
+        args="standalone jsk_pcl/AttentionClipper">
+    <remap from="~input/points" to="$(arg INPUT_CLOUD_TREE1)" />
+    <remap from="~input/box_array" to="$(arg INPUT_BOX_ARRAY_TREE1)" />
+    <rosparam>
+      use_multiple_attention: True
+    </rosparam>
+  </node>
+  <node name="tree1_indices"
+        pkg="jsk_pcl_ros" type="extract_indices">
+    <remap from="~input" to="$(arg INPUT_CLOUD_TREE1)" />
+    <remap from="~indices" to="/tree1_clipper/output/point_indices" />
+  </node>
+  <node name="tree1_voxel_grid"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/VoxelGridLargeScale sample_manager">
+    <remap from="~input" to="/tree1_indices/output"/>
+    <rosparam>
+      leaf_size: 0.02
+    </rosparam>
+  </node>
+
+  <!-- For tree2 trunk -->>
+  <arg name="INPUT_CLOUD_TREE2" value="/organized_edge_detector/output_rgb_edge" />
+  <arg name="INPUT_BOX_ARRAY_TREE2" value="/desired_tree2/input/box_array" />
+  <node name="tree2_clipper"
+        pkg="nodelet" type="nodelet"
+        args="standalone jsk_pcl/AttentionClipper">
+    <remap from="~input/points" to="$(arg INPUT_CLOUD_TREE2)" />
+    <remap from="~input/box_array" to="$(arg INPUT_BOX_ARRAY_TREE2)" />
+    <rosparam>
+      use_multiple_attention: True
+    </rosparam>
+  </node>
+  <node name="tree2_indices"
+        pkg="jsk_pcl_ros" type="extract_indices">
+    <remap from="~input" to="$(arg INPUT_CLOUD_TREE2)" />
+    <remap from="~indices" to="/tree2_clipper/output/point_indices" />
+  </node>
+  <node name="tree2_voxel_grid"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/VoxelGridLargeScale sample_manager">
+    <remap from="~input" to="/tree2_indices/output"/>
+    <rosparam>
+      leaf_size: 0.02
+    </rosparam>
+  </node>
+
+
   <!-- 5. Normal estimation of chosen pointcloud -->
   <!-- Use OMP to speed up the processing time-->
   <!-- Input: a chosen point cloud from pcl detection-->
   <!-- Output: the normal should send to normal concatenator for visualization-->
-  <node name="normal_estimation_omp"
+  <!-- <node name="normal_estimation_omp"
         pkg="nodelet" type="nodelet"
         args="standalone jsk_pcl/NormalEstimationOMP">
     <remap from="~input" to="/voxel_grid_large_scale/output"/>
@@ -72,29 +148,25 @@
       k_search: 0
       radius_search: 0.2
     </rosparam>
-  </node>
+  </node>-->
 
   <!-- 6. Normal visualization -->
   <!-- Input: the chosen point cloud from detection -->
   <!-- Normal: results from normal estimation omp-->
-  <group if="$(arg gui)">
+  <!-- <group if="$(arg gui)">
     <node name="normal_concatenater"
           pkg="nodelet" type="nodelet"
           args="load jsk_pcl_utils/NormalConcatenater sample_manager">
       <remap from="~input" to="/voxel_grid_large_scale/output"/>
       <remap from="~normal" to="/normal_estimation_omp/output"/>
     </node>
-
-    <node name="rviz"
-          pkg="rviz" type="rviz"
-          args="-d $(find drone)/rviz/edge_detector.rviz"/>
-  </group>
+  </group>-->
 
 
 
 
 
 	<!-- Show in Rviz -->
-	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find drone)/rviz/dynamic_filter.rviz" />-->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find drone)/rviz/dynamic_filter.rviz" />
 
 </launch>
