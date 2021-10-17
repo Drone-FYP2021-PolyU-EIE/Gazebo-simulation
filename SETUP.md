@@ -4,6 +4,7 @@ pip3 install kconfiglib
 pip3 install --user packaging
 pip3 install --user jinja2
 pip3 install --user jsonschema
+sudo apt install gcc-arm-none-eabi
 cd ~/Desktop
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 source ubuntu_sim_ros_melodic.sh
