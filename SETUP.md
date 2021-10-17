@@ -23,7 +23,7 @@ source ubuntu_sim_ros_melodic.sh
 cd
 mkdir src
 cd ~/src
-git clone https://github.com/PX4/Firmware.git
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 cd ~/src/Firmware
 git submodule update --init --recursive
 make px4_fmu-v3_default **refer to https://docs.px4.io/master/en/dev_setup/building_px4.html to check version
