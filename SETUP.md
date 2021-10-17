@@ -12,8 +12,10 @@ sudo apt install gcc-arm-none-eabi
 sudo apt install gperf
 sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev zlib1g-dev
 
-**go to /usr/include/newlib/math.h to add #define __ULong unsigned long at the beginning of the code
-
+cd ~/Desktop
+git clone https://github.com/PX4/pyulog
+cd pyulog   ** remember to add from __future__ import print_function into versioneer.py which inside pyulog
+python setup.py build install
 cd ~/Desktop
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 source ubuntu_sim_ros_melodic.sh
