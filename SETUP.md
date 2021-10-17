@@ -1,5 +1,9 @@
 PX4 ROS Gazebo environment
 ```
+pip3 install --user empy
+pip3 install --user toml
+pip3 install --user numpy
+pip3 install --user pyros-genmsg
 pip3 install kconfiglib
 pip3 install --user packaging
 pip3 install --user jinja2
