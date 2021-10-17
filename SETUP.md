@@ -9,6 +9,7 @@ pip3 install --user packaging
 pip3 install --user jinja2
 pip3 install --user jsonschema
 sudo apt install gcc-arm-none-eabi
+sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev zlib1g-dev
 
 **go to /usr/include/newlib/math.h to add #define __ULong unsigned long at the beginning of the code
 
