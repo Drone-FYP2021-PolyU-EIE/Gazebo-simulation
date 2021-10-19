@@ -21,8 +21,7 @@ cd ~/Desktop
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 source ubuntu_sim_ros_melodic.sh
 cd
-mkdir src
-cd ~/src
+
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 cd ~/src/Firmware
 git submodule update --init --recursive
