@@ -29,7 +29,8 @@ git submodule update --init --recursive
 
 make px4_fmu-v3_default **refer to https://docs.px4.io/master/en/dev_setup/building_px4.html to check version which only for hardware setup
 
-make px4_sitl_default gazebo
+DONT_RUN=1 make px4_sitl_default gazebo
+roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
 
 type the following code into .bashrc
