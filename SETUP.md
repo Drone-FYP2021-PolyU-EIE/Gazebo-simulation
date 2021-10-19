@@ -26,10 +26,15 @@ cd ~/src
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 cd ~/src/Firmware
 git submodule update --init --recursive
-make px4_fmu-v3_default **refer to https://docs.px4.io/master/en/dev_setup/building_px4.html to check version
-DONT_RUN=1 make px4_sitl_default gazebo
-source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo
-sudo make px4_sitl_default gazebo
+
+make px4_fmu-v3_default **refer to https://docs.px4.io/master/en/dev_setup/building_px4.html to check version which only for hardware setup
+
+make px4_sitl_default gazebo
+```
+
+type the following code into .bashrc
+```
+source /home/fyp/Desktop/PX4-Autopilot/Tools/setup_gazebo.bash /home/fyp/Desktop/PX4-Autopilot/ /home/fyp/Desktop/PX4-Autopilot/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/fyp/Desktop/PX4-Autopilot/
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/fyp/Desktop/PX4-Autopilot/Tools/sitl_gazebo
 ```
