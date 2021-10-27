@@ -44,6 +44,8 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2021-10-19 upload ```SETUP.md``` for PX4 Gazebo with ROS Wrapper environment setup
 
+2021-10-27 update ```SETUP.md``` and complete the PX4 Gazebo with ROS Wrapper environment setup
+
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
