@@ -46,6 +46,7 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2021-10-27 update ```SETUP.md``` and complete the PX4 Gazebo with ROS Wrapper environment setup
 
+2021-10-29 successfully install realsense D435i into drone model and all the camera topic seems work normally, start to study VINS-FUSION for localization component
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
