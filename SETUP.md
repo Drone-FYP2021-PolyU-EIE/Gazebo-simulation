@@ -52,7 +52,7 @@ sudo apt install libsdl2-dev
 
 ## ceres-solver installation
 ```
-git clone https://ceres-solver.googlesource.com/ceres-solver
+***get the latest stable version of ceres-solver from http://ceres-solver.org/installation.html***
 sudo apt-get install cmake
 sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libatlas-base-dev
