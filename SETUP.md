@@ -35,6 +35,20 @@ roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"   **only sit
 roslaunch px4 mavros_posix_sitl.launch        **SITL and MAVROS
 ```
 
+## QGC installation
+```
+cd
+git clone --recursive -j8 https://github.com/mavlink/qgroundcontrol.git
+git submodule update --recursive
+
+***create account for QT***
+***download the online installer from https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4***
+chmod +x qt-unified-linux-x64-4.1.1-online.run
+./qt-unified-linux-x64-4.1.1-online.run
+***follow https://dev.qgroundcontrol.com/master/en/getting_started/index.html QT part 2 step to install the correct version***
+```
+
+
 ## Type the following code into .bashrc
 ```
 source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default
