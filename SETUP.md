@@ -16,11 +16,13 @@ sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev zlib1g-dev
 
 cd ~/Desktop
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+sudo bash install_geographiclib_datasets.sh
 source ubuntu_sim_ros_melodic.sh
 cd
 
 git clone https://github.com/PX4/PX4-Autopilot.git
-cd ~/src/Firmware
+cd ~/PX4-Autopilot
 git checkout v1.12.3
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
 git submodule update --init --recursive
