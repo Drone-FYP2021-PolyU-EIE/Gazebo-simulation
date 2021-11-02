@@ -37,6 +37,7 @@ roslaunch px4 mavros_posix_sitl.launch        **SITL and MAVROS
 
 ## QGC installation
 ```
+sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev
 cd
 git clone --recursive -j8 https://github.com/mavlink/qgroundcontrol.git
 git submodule update --recursive
@@ -46,6 +47,7 @@ git submodule update --recursive
 chmod +x qt-unified-linux-x64-4.1.1-online.run
 ./qt-unified-linux-x64-4.1.1-online.run
 ***follow https://dev.qgroundcontrol.com/master/en/getting_started/index.html QT part 2 step to install the correct version***
+sudo apt install libsdl2-dev
 ```
 
 
