@@ -50,6 +50,17 @@ chmod +x qt-unified-linux-x64-4.1.1-online.run
 sudo apt install libsdl2-dev
 ```
 
+## ceres-solver installation
+```
+git clone https://ceres-solver.googlesource.com/ceres-solver
+sudo apt-get install cmake
+sudo apt-get install libgoogle-glog-dev libgflags-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libeigen3-dev
+sudo apt-get install libsuitesparse-dev
+```
+
+
 
 ## Type the following code into .bashrc
 ```
