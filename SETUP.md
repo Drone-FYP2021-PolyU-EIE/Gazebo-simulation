@@ -58,6 +58,13 @@ sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libatlas-base-dev
 sudo apt-get install libeigen3-dev
 sudo apt-get install libsuitesparse-dev
+tar zxf ceres-solver-2.0.0.tar.gz
+mkdir ceres-bin
+cd ceres-bin
+cmake ../ceres-solver-2.0.0
+make -j3
+make test
+sudo make install
 ```
 
 
