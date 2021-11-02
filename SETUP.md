@@ -12,7 +12,7 @@ sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras
 sudo apt install gcc-arm-none-eabi
 sudo apt install gperf
 sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev zlib1g-dev
-
+sudo apt upgrade libignition-math2          **for gazebo error which cause the gazebo cannot launch
 
 cd ~/Desktop
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
