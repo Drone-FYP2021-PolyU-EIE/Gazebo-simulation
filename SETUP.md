@@ -67,7 +67,13 @@ make test
 sudo make install
 ```
 
-
+## ROS Octomap installation
+```
+sudo apt-get install ros-melodic-octomap-ros
+sudo apt-get install ros-melodic-octomap-msgs 
+sudo apt-get install ros-melodic-octomap-server
+sudo apt-get install ros-melodic-octomap-rviz-plugins
+```
 
 ## Type the following code into .bashrc
 ```
