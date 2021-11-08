@@ -73,6 +73,8 @@ sudo apt-get install ros-melodic-octomap-ros
 sudo apt-get install ros-melodic-octomap-msgs 
 sudo apt-get install ros-melodic-octomap-server
 sudo apt-get install ros-melodic-octomap-rviz-plugins
+sudo apt-get install ros-melodic-octomap-mapping
+sudo apt-get install ros-melodic-octomap
 ```
 
 ## Type the following code into .bashrc
