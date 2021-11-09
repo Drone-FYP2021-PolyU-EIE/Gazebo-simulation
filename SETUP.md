@@ -77,6 +77,13 @@ sudo apt-get install ros-melodic-octomap-mapping
 sudo apt-get install ros-melodic-octomap
 ```
 
+## jsk_pcl_ros installation
+```
+sudo apt-get install ros-melodic-jsk-pcl-ros
+sudo apt-get install ros-melodic-jsk-rviz-plugins
+sudo apt-get install ros-melodic-ros-numpy
+```
+
 ## Type the following code into .bashrc
 ```
 source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default
