@@ -49,6 +49,9 @@ After testing, it should be not a big problem as the point will set in front of 
 2021-10-29 successfully install realsense D435i into drone model and all the camera topic seems work normally, start to study VINS-FUSION for localization component
 
 2021-11-8 finish the vins-fusion testing in Gazebo environment and start to study octomap
+
+2021-11-10 finish the testing for vins-fusion part and octomap with downsampled point cloud in Gazebo, start to implement the object detection into the Gazebo
+
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
