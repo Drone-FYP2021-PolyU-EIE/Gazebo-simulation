@@ -52,7 +52,7 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2021-11-10 finish the testing for vins-fusion part and octomap with downsampled point cloud in Gazebo, start to implement the object detection into the Gazebo
 
-2021-11-11 update ```SETUP.md``` with vins-fusion installation and octomap installation
+2021-11-11 update ```SETUP.md``` with VINS-fusion installation, octomap installation and QGC installation
 
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
