@@ -1,3 +1,64 @@
+## Nvidia-driver installation
+```
+# Remove existing CuDA versions
+sudo apt --purge remove "cublas*" "cuda*"
+sudo apt --purge remove "nvidia*"
+sudo rm -rf /usr/local/cuda*
+sudo apt-get autoremove && sudo apt-get autoclean
+
+# Reboot to remove cached files 
+reboot
+
+# After reboot
+sudo apt-get clean
+
+# check all available nvidia driver version in the repository
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt install ubuntu-drivers-common
+
+# check which nvidia driver version available for your own graphic card
+ubuntu-drivers devices
+
+# Remember do not install the nvidia-driver-server
+# xxx is the nvidia-driver version that you want to install
+sudo apt install nvidia-driver-xxx
+reboot
+```
+
+## CUDA installation
+```
+# Go to https://developer.nvidia.com/cuda-toolkit-archive to search the cuda version that you want to install
+# Refer to https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html to check which cuda version match with nvidia-driver version
+# Higher nvidia-driver version is compatible install lower CUDA version
+# Remember not to choose deb(local) for Installer Type if you want to downgrade your CUDA version
+# Choose runfile(local) for Installer Type if you want to downgrade your CUDA version
+# Then follow the instruction from website
+
+(Example for install CUDA 10.1 when you want to downgrade the CUDA after install nvidia-driver-460)
+wget https://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
+sudo sh cuda_10.1.243_418.87.00_linux.run
+
+Choose continue
+Do you accept the above EULA? (accept/decline/quit):
+accept
+
+│ CUDA Installer                                                               │
+│ - [ ] Driver                                                                 │
+│      [ ] 418.87.00                                                           │
+│ + [X] CUDA Toolkit 10.1                                                      │
+│   [X] CUDA Samples 10.1                                                      │
+│   [X] CUDA Demo Suite 10.1                                                   │
+│   [X] CUDA Documentation 10.1                                                │
+│   Options                                                                    │
+│   Install                                                                    │
+
+Choose install
+# After installation
+nvcc -V (should be show CUDA 10.1)
+nvidia-smi (should be show NVIDIA-SMI 460.91.03    Driver Version: 460.91.03    CUDA Version: 11.2)
+```
+
 ## PX4 ROS Gazebo environment
 ```
 pip3 install --user empy
