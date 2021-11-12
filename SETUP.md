@@ -57,6 +57,33 @@ Choose install
 # After installation
 nvcc -V (should be show CUDA 10.1)
 nvidia-smi (should be show NVIDIA-SMI 460.91.03    Driver Version: 460.91.03    CUDA Version: 11.2)
+
+gedit ~/.bashrc
+export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda
+source ~/.bashrc
+```
+
+## cuDNN installation
+```
+# Go to https://developer.nvidia.com/rdp/cudnn-archive to find out the correct Platform and correct CUDA version for your own situation
+# Download cuDNN Runtime Library + cuDNN Developer Library by clicking them
+# Navigate to your <cudnnpath> directory containing the cuDNN Debian file.
+# Replace x.x and 8.x.x.x with your specific CUDAand cuDNN versions and package date
+
+sudo dpkg -i libcudnn8_x.x.x-1+cudax.x_amd64.deb
+sudo dpkg -i libcudnn8-dev_8.x.x.x-1+cudax.x_amd64.deb
+
+(Example for install cuDNN 8.0.5 which compatible with CUDA 10.1 in Ubuntu 18.04)
+sudo dpkg -i libcudnn8_8.0.5.39-1+cuda10.1_amd64.deb
+sudo dpkg -i libcudnn8-dev_8.0.5.39-1+cuda10.1_amd64.deb
+```
+
+## Pytorch 1.4 (last version compatible with python 2.7)
+```
+# For CUDA 10.1
+pip install torch==1.4.0 torchvision==0.5.0
 ```
 
 ## PX4 ROS Gazebo environment
