@@ -94,12 +94,23 @@ sudo apt-get install librealsense2-dev
 sudo apt-get install librealsense2-dbg
 ```
 
-## Realsense ROS-Wrapper (PC version)
+## Realsense ROS-Wrapper installation (PC version)
 ```
 cd ~/catkin_ws
 cd src
 git clone https://github.com/IntelRealSense/realsense-ros
 git clone https://github.com/pal-robotics/ddynamic_reconfigure
+```
+
+## ROS bag installation
+```
+sudo apt install ffmpeg
+sudo apt-get install ubuntu-restricted-extras
+
+(Example for using rosbag)
+rosparam set /use_sim_time false
+rosbag record /camera/color/image_raw
+python rosbag2video.py bag_file_name
 ```
 
 ## Type the following code into .bashrc
