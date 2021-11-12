@@ -84,6 +84,26 @@ sudo apt-get install ros-melodic-jsk-rviz-plugins
 sudo apt-get install ros-melodic-ros-numpy
 ```
 
+## Realsense-viewer installation (PC version)
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+sudo apt-get install librealsense2-dev
+sudo apt-get install librealsense2-dbg
+
+cd ~/catkin_ws
+cd src
+git clone https://github.com/IntelRealSense/realsense-ros
+git clone https://github.com/pal-robotics/ddynamic_reconfigure
+```
+
+## Realsense ROS-Wrapper (PC version)
+```
+
+```
+
 ## Type the following code into .bashrc
 ```
 source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default
