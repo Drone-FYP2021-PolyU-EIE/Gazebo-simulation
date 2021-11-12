@@ -92,16 +92,14 @@ sudo apt-get install librealsense2-dkms
 sudo apt-get install librealsense2-utils
 sudo apt-get install librealsense2-dev
 sudo apt-get install librealsense2-dbg
-
-cd ~/catkin_ws
-cd src
-git clone https://github.com/IntelRealSense/realsense-ros
-git clone https://github.com/pal-robotics/ddynamic_reconfigure
 ```
 
 ## Realsense ROS-Wrapper (PC version)
 ```
-
+cd ~/catkin_ws
+cd src
+git clone https://github.com/IntelRealSense/realsense-ros
+git clone https://github.com/pal-robotics/ddynamic_reconfigure
 ```
 
 ## Type the following code into .bashrc
