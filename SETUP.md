@@ -101,6 +101,15 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 # For CUDA 10.1
 pip install torch==1.4.0 torchvision==0.5.0
+
+# Verify the installation
+# Show below code means installation correctly
+python2.7
+Python 2.7.17 (default, Feb 27 2021, 15:10:58) 
+[GCC 7.5.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> exit()
 ```
 
 ## PX4 ROS Gazebo environment
