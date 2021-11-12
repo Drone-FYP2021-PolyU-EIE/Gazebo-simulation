@@ -100,6 +100,8 @@ cd ~/catkin_ws
 cd src
 git clone https://github.com/IntelRealSense/realsense-ros
 git clone https://github.com/pal-robotics/ddynamic_reconfigure
+cd ..
+catkin_make     or      catkin build
 ```
 
 ## ROS bag installation
