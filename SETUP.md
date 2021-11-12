@@ -69,15 +69,32 @@ source ~/.bashrc
 ```
 # Go to https://developer.nvidia.com/rdp/cudnn-archive to find out the correct Platform and correct CUDA version for your own situation
 # Download cuDNN Runtime Library + cuDNN Developer Library by clicking them
+# cuDNN Code Samples and User Guide is optional
 # Navigate to your <cudnnpath> directory containing the cuDNN Debian file.
 # Replace x.x and 8.x.x.x with your specific CUDAand cuDNN versions and package date
 
 sudo dpkg -i libcudnn8_x.x.x-1+cudax.x_amd64.deb
 sudo dpkg -i libcudnn8-dev_8.x.x.x-1+cudax.x_amd64.deb
+sudo dpkg -i libcudnn8-samples_8.x.x.x-1+cudax.x_amd64.deb (optional)
 
 (Example for install cuDNN 8.0.5 which compatible with CUDA 10.1 in Ubuntu 18.04)
+# The following codes must be installed in order
 sudo dpkg -i libcudnn8_8.0.5.39-1+cuda10.1_amd64.deb
 sudo dpkg -i libcudnn8-dev_8.0.5.39-1+cuda10.1_amd64.deb
+sudo dpkg -i libcudnn8-samples_8.0.5.39-1+cuda10.1_amd64.deb (optional)
+
+sudo cp /usr/include/cudnn.h /usr/local/cuda/include
+sudo chmod a+x /usr/local/cuda/include/cudnn.h
+cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+
+# Show below information means install cuDNN success
+  #define CUDNN_MAJOR 8
+  #define CUDNN_MINOR 0
+  #define CUDNN_PATCHLEVEL 5
+  --
+  #define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+
+  #endif /* CUDNN_VERSION_H */
 ```
 
 ## Pytorch 1.4 (last version compatible with python 2.7)
