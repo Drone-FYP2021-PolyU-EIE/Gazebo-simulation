@@ -56,6 +56,8 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2021-11-12 update ```SETUP.md``` with nvidia-driver, CUDA, cuDNN and Pytorch installation
 
+2021-12-17 upload ```realworld_dynamic_filter_testing``` folder which able to find obstacle and people attention point cloud by dynamic filter perfectly
+
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
