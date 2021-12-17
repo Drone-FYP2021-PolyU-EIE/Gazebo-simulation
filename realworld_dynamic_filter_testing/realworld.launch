@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- 2. downsample -->
+    <!-- for voxel grid -->
+    <node name="sample_manager"
+    pkg="nodelet" type="nodelet"
+    args="manager"/>
+    <node name="voxel_grid_large_scale"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/VoxelGridLargeScale sample_manager">
+        <remap from="~input" to="/camera/depth/color/points"/>
+        <rosparam>
+            leaf_size: 0.05
+        </rosparam>
+    </node>
+
+    <!-- 3. Implement bounding box -->
+    <!-- <arg name="INPUT_CLOUD" value="/camera/depth/color/points" />-->
+    <arg name="INPUT_CLOUD" value="/voxel_grid_large_scale/output" />
+    <arg name="INPUT_BOX_ARRAY" value="/desired/input/box_array" />
+    <node name="attention_clipper"
+            pkg="nodelet" type="nodelet"
+            args="standalone jsk_pcl/AttentionClipper">
+        <remap from="~input/points" to="$(arg INPUT_CLOUD)" />
+        <remap from="~input/box_array" to="$(arg INPUT_BOX_ARRAY)" />
+        <rosparam>
+            use_multiple_attention: True
+            <!-- frame_id_list: camera_depth_optical_frame -->
+            <!-- frame_id: camera_depth_optical_frame -->
+        </rosparam>
+    </node>
+    <node name="extract_indices"
+            pkg="jsk_pcl_ros" type="extract_indices">
+        <remap from="~input" to="$(arg INPUT_CLOUD)" />
+        <remap from="~indices" to="/attention_clipper/output/point_indices" />
+    </node>
+
+    <!-- Show in Rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d /home/eeman/Desktop/yolov4_tiny/rviz.rviz" />
+
+</launch>
