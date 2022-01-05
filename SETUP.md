@@ -138,7 +138,7 @@ cd
 git clone https://github.com/PX4/PX4-Autopilot.git
 cd ~/PX4-Autopilot
 git checkout v1.12.3
-bash ./PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
+bash ~/PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
 git submodule update --init --recursive
 
 make px4_fmu-v3_default **refer to https://docs.px4.io/master/en/dev_setup/building_px4.html to check version which only for hardware setup
