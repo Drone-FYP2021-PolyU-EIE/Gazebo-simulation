@@ -246,3 +246,14 @@ catkin_make
 roslaunch vicon_bridge vicon.launch    ***change datastream_hostport to the suitable IP address***
 ***The tf frame vicon_world represent the drone***
 ```
+
+## pip and pip3 installation ubuntu 20.04
+```
+sudo apt update
+sudo apt install python2
+sudo apt install curl
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
+pip2 --version ***show pip 20.3.4 from /usr/local/lib/python2.7/dist-packages/pip (python 2.7)***
+pip3 --version ***show pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)***
+```
