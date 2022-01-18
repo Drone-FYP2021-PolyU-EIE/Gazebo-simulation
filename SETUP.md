@@ -234,7 +234,10 @@ sudo apt-get install librealsense2-dbg
 ```
 cd ~/catkin_ws
 cd src
-git clone https://github.com/IntelRealSense/realsense-ros
+git clone https://github.com/IntelRealSense/realsense-ros.git
+cd realsense-ros/
+git checkout ***the most stable version and support with your realsense-viewer version***
+
 git clone https://github.com/pal-robotics/ddynamic_reconfigure
 cd ..
 catkin_make     or      catkin build
