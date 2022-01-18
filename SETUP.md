@@ -190,19 +190,34 @@ sudo make install
 
 ## ROS Octomap installation
 ```
+# Ubuntu 18.04
 sudo apt-get install ros-melodic-octomap-ros
 sudo apt-get install ros-melodic-octomap-msgs 
 sudo apt-get install ros-melodic-octomap-server
 sudo apt-get install ros-melodic-octomap-rviz-plugins
 sudo apt-get install ros-melodic-octomap-mapping
 sudo apt-get install ros-melodic-octomap
+
+# Ubuntu 20.04
+sudo apt-get install ros-noetic-octomap-ros
+sudo apt-get install ros-noetic-octomap-msgs 
+sudo apt-get install ros-noetic-octomap-server
+sudo apt-get install ros-noetic-octomap-rviz-plugins
+sudo apt-get install ros-noetic-octomap-mapping
+sudo apt-get install ros-noetic-octomap
 ```
 
 ## jsk_pcl_ros installation
 ```
+# Ubuntu 18.04
 sudo apt-get install ros-melodic-jsk-pcl-ros
 sudo apt-get install ros-melodic-jsk-rviz-plugins
 sudo apt-get install ros-melodic-ros-numpy
+
+# Ubuntu 20.04
+sudo apt-get install ros-noetic-jsk-pcl-ros
+sudo apt-get install ros-noetic-jsk-rviz-plugins
+sudo apt-get install ros-noetic-ros-numpy
 ```
 
 ## Realsense-viewer installation (PC version)
