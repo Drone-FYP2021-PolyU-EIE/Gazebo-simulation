@@ -235,3 +235,13 @@ source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/b
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
 ```
+
+## Vicon_bridge installation
+```
+cd ~/catkin_ws/src
+git clone https://github.com/ethz-asl/vicon_bridge.git
+cd ..
+catkin_make
+roslaunch vicon_bridge vicon.launch    ***change datastream_hostport to the suitable IP address***
+***The tf frame vicon_world represent the drone***
+```
