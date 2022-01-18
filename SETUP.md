@@ -146,6 +146,12 @@ make px4_fmu-v3_default **refer to https://docs.px4.io/master/en/dev_setup/build
 
 cd ~/PX4-Autopilot
 make px4_sitl_default gazebo
+
+## Type the following code into .bashrc
+source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
+
 roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"   **only sitl with gazebo
 roslaunch px4 mavros_posix_sitl.launch        **SITL and MAVROS
 ```
@@ -228,13 +234,6 @@ sudo apt-get install ubuntu-restricted-extras
 rosparam set /use_sim_time false
 rosbag record /camera/color/image_raw
 python rosbag2video.py bag_file_name
-```
-
-## Type the following code into .bashrc
-```
-source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
 ```
 
 ## Vicon_bridge installation
