@@ -237,10 +237,13 @@ cd src
 git clone https://github.com/IntelRealSense/realsense-ros.git
 cd realsense-ros/
 git checkout ***the most stable version and support with your realsense-viewer version***
+cd ..
 
 git clone https://github.com/pal-robotics/ddynamic_reconfigure
+cd ddynamic_reconfigure/
 git checkout ***the most stable version***
 cd ..
+
 catkin_make     or      catkin build
 ```
 
