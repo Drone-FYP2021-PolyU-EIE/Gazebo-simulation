@@ -158,6 +158,7 @@ roslaunch px4 mavros_posix_sitl.launch        **SITL and MAVROS
 
 ## QGC installation
 ```
+# build from source
 sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev
 cd
 git clone --recursive -j8 https://github.com/mavlink/qgroundcontrol.git
@@ -169,6 +170,15 @@ chmod +x qt-unified-linux-x64-4.1.1-online.run
 ./qt-unified-linux-x64-4.1.1-online.run
 ***follow https://dev.qgroundcontrol.com/master/en/getting_started/index.html QT part 2 step to install the correct version***
 sudo apt install libsdl2-dev
+
+# follow the official tutorial (https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html)
+sudo usermod -a -G dialout $USER
+sudo apt-get remove modemmanager -y
+sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+
+***Download QGroundControl.AppImage***
+chmod +x ./QGroundControl.AppImage
+./QGroundControl.AppImage
 ```
 
 ## ceres-solver installation
