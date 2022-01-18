@@ -287,3 +287,12 @@ sudo python2 get-pip.py
 pip2 --version ***show pip 20.3.4 from /usr/local/lib/python2.7/dist-packages/pip (python 2.7)***
 pip3 --version ***show pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)***
 ```
+
+## Signal installation
+```
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+  sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop
+```
