@@ -296,3 +296,8 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
   sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install signal-desktop
 ```
+
+## Grub-customizer (for Dual boot to change booting priority)
+```
+sudo apt install grub-customizer
+```
