@@ -37,6 +37,7 @@ reboot
 
 (Example for install CUDA 10.1 when you want to downgrade the CUDA after install nvidia-driver-460)
 wget https://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
+# If it show the gcc version fail to verify, please add --override such as sudo sh cuda_10.1.243_418.87.00_linux.run --override
 sudo sh cuda_10.1.243_418.87.00_linux.run
 
 Choose continue
