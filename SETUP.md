@@ -319,7 +319,7 @@ cd ..
 catkin_make
 ```
 
-## VNC Jetson installation
+## VNC Jetson installation (not finish yet)
 ```
 sudo apt update
 sudo apt install vino
@@ -338,4 +338,16 @@ Wired connection 1  313a7146-a09a-34b9-bc54-d0c539139c4b  ethernet  --
 dconf write /org/gnome/settings-daemon/plugins/sharing/vino-server/enabled-connections "[' Put the desired UUID here']"
 export DISPLAY=:0
 ifconfig        ***record your current IP address***
+```
+
+##  xrdp remote desktop installation
+```
+sudo apt update
+sudo apt-get install tightvncserver xrdp
+sudo reboot
+sudo apt-get install xubuntu-desktop
+echo xfce4-session >~/.xsession
+sudo service xrdp restart
+
+***Turn to window use remote desktop access and enter the Jetson IP address***
 ```
