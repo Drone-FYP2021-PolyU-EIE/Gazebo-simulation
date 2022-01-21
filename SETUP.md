@@ -318,3 +318,24 @@ git clone https://github.com/ros-drivers/vrpn_client_ros.git
 cd ..
 catkin_make
 ```
+
+## VNC Jetson installation
+```
+sudo apt update
+sudo apt install vino
+gsettings set org.gnome.Vino prompt-enabled false
+gsettings set org.gnome.Vino require-encryption false
+nmcli connection show
+
+***Example***
+NAME                UUID                                  TYPE      DEVICE  
+VICON_5G            f6e64dcf-90d5-4bfb-a3a6-976cf208ca37  wifi      wlan0   
+docker0             65e700af-e350-440f-85e3-079e032fc55b  bridge    docker0 
+EIA-W311MESH        3e3e1be4-9d3c-4cc7-836e-1034638191cd  wifi      --      
+TOTOLINK A1004      52635202-f2bd-4c4c-8e40-1328a12899ac  wifi      --      
+Wired connection 1  313a7146-a09a-34b9-bc54-d0c539139c4b  ethernet  --      
+
+dconf write /org/gnome/settings-daemon/plugins/sharing/vino-server/enabled-connections "[' Put the desired UUID here']"
+export DISPLAY=:0
+ifconfig        ***record your current IP address***
+```
