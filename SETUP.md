@@ -308,3 +308,13 @@ sudo apt-get install ibus-cangjie
 # follow below website 
 https://medium.com/hong-kong-linux-user-group/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E8%8B%B1%E6%96%87%E4%BB%8B%E9%9D%A2%E4%B8%8B%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E5%80%89%E9%A0%A1%E9%80%9F%E6%88%90%E8%BC%B8%E5%85%A5%E6%B3%95-24d0f4bcf479
 ```
+
+
+## Vrpn installation
+```
+sudo apt install ros-melodic-vrpn-client-ros
+cd ~/catkin_ws/src
+git clone https://github.com/ros-drivers/vrpn_client_ros.git
+cd ..
+catkin_make
+```
