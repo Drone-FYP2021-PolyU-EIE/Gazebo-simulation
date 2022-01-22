@@ -58,7 +58,13 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2021-12-17 upload ```realworld_dynamic_filter_testing``` folder which able to find obstacle and people attention point cloud by dynamic filter perfectly
 
+2022-1-11 update ```SETUP.md``` for ROS noetic version software and confirm that noetic version default python is ```Python3```
+
+2022-1-22 update ```SETUP.md``` with remote Jetson, Vrpn installation
+
 2022-1-22 successfully convert the ```moving.py``` into ```moving_with_auto_tf.py``` which can change the transform between camera frame to the world frame
+
+
 
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
