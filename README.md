@@ -64,7 +64,7 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2022-1-22 successfully convert the ```moving.py``` into ```moving_with_auto_tf.py``` which can change the transform between camera frame to the world frame
 
-
+2022-1-25 NED or ENU system need to be confirm, the futher study on https://blog.csdn.net/qq_33641919/article/details/101003978
 
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
