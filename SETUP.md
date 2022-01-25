@@ -351,3 +351,11 @@ sudo service xrdp restart
 
 ***Turn to window use remote desktop access and enter the Jetson IP address***
 ```
+
+## OBS Linux installation
+```
+sudo apt install ffmpeg
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt update
+sudo apt install obs-studio
+```
