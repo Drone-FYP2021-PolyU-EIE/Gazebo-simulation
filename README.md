@@ -66,6 +66,8 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2022-1-25 NED or ENU system need to be confirm, the futher study on https://blog.csdn.net/qq_33641919/article/details/101003978
 
+2022-2-11 Updated ```moving_with_static_obstacle_v8.py``` which included k-means cluster to find the cluster pointcloud size and automatically update the path with best current solution
+
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
