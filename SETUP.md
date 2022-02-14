@@ -229,6 +229,22 @@ sudo apt-get install ros-noetic-jsk-rviz-plugins
 sudo apt-get install ros-noetic-ros-numpy
 ```
 
+## Realsense-viewer installation (Jetson version)
+```
+git clone https://github.com/IntelRealSense/librealsense.git
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
+sudo apt-get install librealsense2-utils
+sudo apt-get install librealsense2-dev
+
+```
+
+## Realsense ROS-Wrapper installation (PC version)
+```
+cd ~/catkin_ws/src
+git clone https://github.com/IntelRealSense/realsense-ros.git
+```
+
 ## Realsense-viewer installation (PC version)
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
