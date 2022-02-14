@@ -366,3 +366,8 @@ sudo apt-get install python-pip python-yaml
 sudo apt-get install python3-pip python3-yaml 
 sudo pip3 install rospkg catkin_pkg
 ```
+
+## Jetson System Monitor (Jtop)
+```
+sudo -H pip install -U jetson-stats
+```
