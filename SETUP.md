@@ -359,3 +359,10 @@ sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
 sudo apt install obs-studio
 ```
+
+## Python3 ROS installation
+```
+sudo apt-get install python-pip python-yaml 
+sudo apt-get install python3-pip python3-yaml 
+sudo pip3 install rospkg catkin_pkg
+```
