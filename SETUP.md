@@ -401,4 +401,6 @@ sudo -H pip install -U jetson-stats
 sudo apt install python3-dev
 sudo apt install cmake
 sudo apt install protobuf-compiler
+pip3 install scikit-build
+pip3 install opencv_contrib_python
 ```
