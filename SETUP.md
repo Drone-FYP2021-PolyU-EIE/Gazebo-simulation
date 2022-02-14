@@ -238,10 +238,11 @@ sudo apt-get install librealsense2-utils
 sudo apt-get install librealsense2-dev
 ```
 
-## Realsense ROS-Wrapper installation (PC version)
+## Realsense ROS-Wrapper installation (Jetson version)
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/IntelRealSense/realsense-ros.git
+git clone https://github.com/pal-robotics/ddynamic_reconfigure.git
 cd /opt/ros/melodic/share/cv_bridge/cmake
 sudo gedit cv_bridgeConfig.cmake      ## change the opencv directory to opencv4
 
