@@ -389,11 +389,16 @@ sudo apt-get install python-catkin-tools
 sudo apt-get install python3-catkin-tools 
 sudo apt-get install python3-dev python3-numpy
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
-
-
 ```
 
 ## Jetson System Monitor (Jtop)
 ```
 sudo -H pip install -U jetson-stats
+```
+
+## Mediapipe (Jetson version)
+```
+sudo apt install python3-dev
+sudo apt install cmake
+sudo apt install protobuf-compiler
 ```
