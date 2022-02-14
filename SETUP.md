@@ -365,6 +365,8 @@ sudo apt install obs-studio
 sudo apt-get install python-pip python-yaml 
 sudo apt-get install python3-pip python3-yaml 
 sudo pip3 install rospkg catkin_pkg
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+
 ```
 
 ## Jetson System Monitor (Jtop)
