@@ -410,6 +410,8 @@ catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/inclu
 ## Jetson System Monitor (Jtop)
 ```
 sudo -H pip install -U jetson-stats
+reboot
+sudo jtop
 ```
 
 ## Mediapipe (Jetson version)
