@@ -26,3 +26,11 @@ in /Tools/sitl_gazebo/models/iris/iris.sdf in line 467 change from `<use_tcp>1</
 ```bash
 <use_tcp>0</use_tcp>
 ```
+
+## problem in install matplotlib
+```bash
+#put this statement in .bashrc
+export OPENBLAS_CORETYPE=ARMV8 python3
+
+
+```
