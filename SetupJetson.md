@@ -1,4 +1,10 @@
 # Setup (For Jetson)
+Set fan mode to cool
+```bash
+#sudo /usr/sbin/nvpmodel -d <fan_mode:quiet||cool>
+sudo /usr/sbin/nvpmodel -d cool
+```
+
 ## Ros setup px4 
 ``` bash
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
