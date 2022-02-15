@@ -301,6 +301,11 @@ roslaunch vicon_bridge vicon.launch    ***change datastream_hostport to the suit
 ```
 sudo apt update
 sudo apt install python2
+sudo apt install python3
+sudo apt install python2-pip
+sudo apt install python3-pip
+sudo -H pip3 install --upgrade pip
+sudo -H pip2 install --upgrade pip
 sudo apt install curl
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 sudo python2 get-pip.py
