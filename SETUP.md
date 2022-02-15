@@ -404,3 +404,72 @@ sudo apt install protobuf-compiler
 pip3 install scikit-build
 pip3 install opencv_contrib_python
 ```
+
+## Opencv 4.5.2(Jetson GPU version)
+```
+cd ~/catkin_ws/src
+git clone https://github.com/opencv/opencv_contrib.git
+cd opencv_contrib
+git checkout tags/4.5.2
+cd ..
+git clone https://github.com/opencv/opencv.git
+cd opencv
+git checkout tags/4.5.2
+mkdir build
+cd build
+
+##Change according to cuda/gcc version
+cmake --clean-first \
+-D CMAKE_BUILD_TYPE=RELEASE \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+-D EIGEN_INCLUDE_PATH=/usr/include/eigen3 \
+-D WITH_OPENCL=ON \
+-D WITH_CUDA=ON \
+-D CUDA_ARCH_BIN=7.2 \
+-D WITH_CUDNN=ON \
+-D CUDNN_VERSION='8.0' \
+-D WITH_CUBLAS=ON \
+-D ENABLE_FAST_MATH=ON \
+-D CUDA_FAST_MATH=ON \
+-D OPENCV_DNN_CUDA=ON \
+-D ENABLE_NEON=ON \
+-D BUILD_opencv_cudacodec=ON \
+-D WITH_QT=ON \
+-D WITH_OPENMP=ON \
+-D WITH_OPENGL=ON \
+-D BUILD_TIFF=ON \
+-D WITH_FFMPEG=ON \
+-D WITH_GSTREAMER=ON \
+-D WITH_TBB=ON \
+-D BUILD_TBB=ON \
+-D BUILD_TESTS=OFF \
+-D WITH_EIGEN=ON \
+-D WITH_V4L=ON \
+-D WITH_LIBV4L=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D INSTALL_C_EXAMPLES=ON \
+-D INSTALL_PYTHON_EXAMPLES=ON \
+-D BUILD_NEW_PYTHON_SUPPORT=ON \
+-D BUILD_opencv_python2=ON \
+-D BUILD_opencv_python3=ON \
+-D OPENCV_GENERATE_PKGCONFIG=ON \
+-D WITH_NVCUVID=ON\
+-D BUILD_EXAMPLES=ON ..
+
+########### make will take ~ 2 hours, also make sure ram is not occupied
+
+sudo make -j6
+sudo make -j6 install
+
+########### reboot first
+
+sudo apt install -y libssl-dev libusb-1.0-0-dev pkg-config build-essential cmake cmake-curses-gui libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev qtcreator python3 python3-dev apt-utils
+
+cd ~/catkin_ws/src
+git clone https://github.com/MartinNievas/vision_opencv.git
+cd vision_opencv/
+git checkout compile_oCV4
+cd ~/catkin_ws
+catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+```
