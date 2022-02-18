@@ -425,7 +425,7 @@ pip3 install opencv_contrib_python
 
 ## Opencv 4.5.2(Jetson GPU version)
 ```
-cd ~/catkin_ws/src
+cd ~
 git clone https://github.com/opencv/opencv_contrib.git
 cd opencv_contrib
 git checkout tags/4.5.2
@@ -477,8 +477,7 @@ cmake --clean-first \
 
 ########### make will take ~ 2 hours, also make sure ram is not occupied
 
-sudo make -j6
-sudo make -j6 install
+sudo make -j6 && sudo make -j6 install
 
 ########### reboot first
 
