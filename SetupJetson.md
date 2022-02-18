@@ -40,3 +40,27 @@ export OPENBLAS_CORETYPE=ARMV8 python3
 
 
 ```
+
+## Fast test in cmd
+```
+rostopic pub -r 20 /mavros/setpoint_position/local geometry_msgs/PoseStamped "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+pose:
+  position:
+    x: 0.0
+    y: 0.0
+    z: 0.5
+  orientation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0" 
+
+rosrun mavros mavsafety arm
+rosrun mavros mavsys mode -c OFFBOARD
+
+```
