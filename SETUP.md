@@ -129,6 +129,10 @@ sudo apt install gperf
 sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev zlib1g-dev
 sudo apt upgrade libignition-math2          **for gazebo error which cause the gazebo cannot launch
 
+gedit ~/.bashrc
+#put this statement in .bashrc
+export OPENBLAS_CORETYPE=ARMV8 python3
+
 cd ~/Desktop
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
