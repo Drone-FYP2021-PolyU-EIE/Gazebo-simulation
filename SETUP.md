@@ -331,6 +331,11 @@ sudo apt update && sudo apt install signal-desktop
 sudo apt install grub-customizer
 ```
 
+## Jetson fan mode
+```
+sudo /usr/sbin/nvpmodel -d cool
+```
+
 ## Chinese input (倉頡速成)
 ```
 sudo apt-get install ibus-cangjie
@@ -425,6 +430,13 @@ sudo apt install cmake
 sudo apt install protobuf-compiler
 pip3 install scikit-build
 pip3 install opencv_contrib_python
+sudo apt-get install curl
+git clone https://github.com/PINTO0309/mediapipe-bin
+cd mediapipe-bin
+./v0.8.5/numpy119x/mediapipe-0.8.5_cuda102-cp36-cp36m-linux_aarch64_numpy119x_jetsonnano_L4T32.5.1_download.sh   (這個 sh 檔會下載一些檔案)
+pip3 install numpy-1.19.4-cp36-none-manylinux2014_aarch64.whl
+pip3 install mediapipe-0.8.5_cuda102-cp36-none-linux_aarch64.whl
+pip3 install opencv-python dataclasses
 ```
 
 ## Opencv 4.5.2(Jetson GPU version)
