@@ -68,6 +68,8 @@ After testing, it should be not a big problem as the point will set in front of 
 
 2022-2-11 Updated ```moving_with_static_obstacle_v8.py``` which included k-means cluster to find the cluster pointcloud size and automatically update the path with best current solution
 
+2022-2-23 Steve added note to setup jetson to boot from SSD refer readme 
+
 ### Remark
 ```test_attention_clipper.launch``` will automatically map the input Bounding Box into the point cloud, it seems to map the original point into d435_depth_optical_frame
 
