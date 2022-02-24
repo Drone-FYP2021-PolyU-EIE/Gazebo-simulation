@@ -6,16 +6,13 @@ sudo /usr/sbin/nvpmodel -d cool
 ```
 
 ## Ros setup px4 
-``` bash
-git clone https://github.com/PX4/PX4-Autopilot.git --recursive
-bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
-```
 ## create px4 in catkin 
 NOTE: ROS Melodic is installed with Gazebo9 by default.   
 Your catkin (ROS build system) workspace is created at ~/catkin_ws/.(<---this important)    
 The script uses instructions from the ROS Wiki "Melodic"    
-```bash
-bash ubuntu.sh --no-nuttx
+``` bash
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+bash ~/PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
 ```
 
 ## fix for 19 issues
