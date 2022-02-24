@@ -28,7 +28,7 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
 ```
 Then you can test the gazbo setup by:    
 ```bash
-roslaunch px4 posix_sitl.launch
+roslaunch px4 mavros_posix_sitl.launch
 ```
 if you see ` Waiting for simulator to accept connection on TCP port 4560` then do the `fix for 19 TCP issues` section la    
 
