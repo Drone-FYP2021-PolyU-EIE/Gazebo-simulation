@@ -33,7 +33,11 @@ roslaunch px4 posix_sitl.launch
 if you see ` Waiting for simulator to accept connection on TCP port 4560` then do the `fix for 19 TCP issues` section la    
 
 ## fix for 19 TCP issues (use UDP instead)
-in /build/px4_sitl_default/etc/init.d-posix/rcS   
+in ~/PX4-Autopilot/build/px4_sitl_default/etc/init.d-posix/rcS
+```bash
+vim ~/PX4-Autopilot/build/px4_sitl_default/etc/init.d-posix/rcS
+```
+
 in add after line 108 `param set MAV_SYS_ID $((px4_instance+1))`   
 ```bash 
 param set simulator_udp_port $((14560+px4_instance))
