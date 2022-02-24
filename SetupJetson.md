@@ -38,11 +38,11 @@ in ~/PX4-Autopilot/build/px4_sitl_default/etc/init.d-posix/rcS
 vim ~/PX4-Autopilot/build/px4_sitl_default/etc/init.d-posix/rcS
 ```
 
-in add after line 108 `param set MAV_SYS_ID $((px4_instance+1))`   
+in add *after* line 108 `param set MAV_SYS_ID $((px4_instance+1))`   
 ```bash 
 param set simulator_udp_port $((14560+px4_instance))
 ```
-in add after line 213 `. px4-rc.params`   
+add *before* line 213 `. px4-rc.params`   
 ```bash
 simulator start -u $simulator_udp_port
 ```
@@ -76,7 +76,7 @@ pose:
     x: 0.0
     y: 0.0
     z: 0.0
-    w: 1.0" 
+    w: 0.0" 
 
 rosrun mavros mavsafety arm
 rosrun mavros mavsys mode -c OFFBOARD
