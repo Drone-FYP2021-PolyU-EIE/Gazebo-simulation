@@ -19,6 +19,8 @@ The script uses instructions from the ROS Wiki "Melodic"
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 bash ubuntu_sim_ros_melodic.sh
 ```
+in `./bashrc` find `export ROS_IP=192.168.x.xxx` remove this line   
+
 ## fix for 19 issues
 in /build/px4_sitl_default/etc/init.d-posix/rcS   
 in add after line 108 `param set MAV_SYS_ID $((px4_instance+1))`   
