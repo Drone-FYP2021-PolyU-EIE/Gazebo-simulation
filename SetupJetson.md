@@ -5,16 +5,20 @@ Set fan mode to cool
 sudo /usr/sbin/nvpmodel -d cool
 ```
 
-## Ros setup px4 
-## create px4 in catkin 
-NOTE: ROS Melodic is installed with Gazebo9 by default.   
-Your catkin (ROS build system) workspace is created at ~/catkin_ws/.(<---this important)    
-The script uses instructions from the ROS Wiki "Melodic"    
+## Ros setup px4     
 ``` bash
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 bash ~/PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
 ```
 
+## Create px4 in catkin
+NOTE: ROS Melodic is installed with Gazebo9 by default.   
+Your catkin (ROS build system) workspace is created at ~/catkin_ws/.(<---this important)    
+The script uses instructions from the ROS Wiki "Melodic" 
+```bash 
+wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
+bash ubuntu_sim_ros_melodic.sh
+```
 ## fix for 19 issues
 in /build/px4_sitl_default/etc/init.d-posix/rcS   
 in add after line 108 `param set MAV_SYS_ID $((px4_instance+1))`   
