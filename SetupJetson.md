@@ -26,8 +26,13 @@ source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/b
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
 ```
+Then you can test the gazbo setup by:    
+```bash
+roslaunch px4 posix_sitl.launch
+```
+if you see ` Waiting for simulator to accept connection on TCP port 4560` then do the `fix for 19 TCP issues` section la    
 
-## fix for 19 issues
+## fix for 19 TCP issues (use UDP instead)
 in /build/px4_sitl_default/etc/init.d-posix/rcS   
 in add after line 108 `param set MAV_SYS_ID $((px4_instance+1))`   
 ```bash 
