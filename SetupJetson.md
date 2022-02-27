@@ -20,6 +20,7 @@ wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_
 bash ubuntu_sim_ros_melodic.sh
 ```
 in `.bashrc` find `export ROS_IP=192.168.x.xxx` remove this line, this line wil f*** ros if you change new ip
+change to`export ROS_HOSTNAME=localhost`    
 Add following in `.bashrc` (assume that the catkin workspace for px4 is in `~/PX4-Autopilot`)
 ```bash 
 source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default
