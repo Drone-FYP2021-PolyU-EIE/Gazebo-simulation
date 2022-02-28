@@ -102,6 +102,9 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 python3 -m pip install numpy
 python3 -m pip install 'pycuda<2021.1'
+python3 -m pip install --upgrade setuptools pip
+python3 -m pip install nvidia-pyindex
+python3 -m pip install --upgrade nvidia-tensorrt
 ```
 
 ## Pytorch 1.4 (last version compatible with python 2.7)
