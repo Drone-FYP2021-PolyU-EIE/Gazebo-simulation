@@ -98,6 +98,12 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
   #endif /* CUDNN_VERSION_H */
 ```
 
+## TensorRT installation
+```
+python3 -m pip install numpy
+python3 -m pip install 'pycuda<2021.1'
+```
+
 ## Pytorch 1.4 (last version compatible with python 2.7)
 ```
 # For CUDA 10.1
