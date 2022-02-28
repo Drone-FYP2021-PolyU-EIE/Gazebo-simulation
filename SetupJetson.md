@@ -60,6 +60,35 @@ export OPENBLAS_CORETYPE=ARMV8 python3
 
 ```
 
+## Remote Destkop(xrdp) for Jetson 
+```bash
+sudo apt install -y xrdp
+sudo apt-get install gnome-tweak-tool gnome-shell-extensions  -y
+gnome-shell-extension-tool -e ubuntu-dock@ubuntu.com
+```
+`vim /etc/polkit-1/localauthority/50-local.d/45-allow.colord.pkla` create the following   
+```bash
+[Allow Colord all Users]
+Identity=unix-user:*
+Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
+```
+`vim /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf` create the following   
+```bash
+polkit.addRule(function(action, subject) {
+ if ((action.id == "org.freedesktop.color-manager.create-device" ||
+ action.id == "org.freedesktop.color-manager.create-profile" ||
+ action.id == "org.freedesktop.color-manager.delete-device" ||
+ action.id == "org.freedesktop.color-manager.delete-profile" ||
+ action.id == "org.freedesktop.color-manager.modify-device" ||
+ action.id == "org.freedesktop.color-manager.modify-profile") &&
+ subject.isInGroup("{users}")) {
+ return polkit.Result.YES;
+ }
+ });
+```
 ## Fast test in cmd
 ```
 rostopic pub -r 20 /mavros/setpoint_position/local geometry_msgs/PoseStamped "header:
@@ -81,5 +110,4 @@ pose:
 
 rosrun mavros mavsafety arm
 rosrun mavros mavsys mode -c OFFBOARD
-
 ```
