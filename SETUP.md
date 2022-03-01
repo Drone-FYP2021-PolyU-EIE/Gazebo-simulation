@@ -599,3 +599,9 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt install python3-pcl
 pip3 install scikit-fmm
 ```
+
+## YOLOv5
+```
+pip3 install tqdm
+pip3 install seaborn
+```
