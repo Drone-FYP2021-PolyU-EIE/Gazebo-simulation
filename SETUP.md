@@ -135,7 +135,7 @@ sudo apt-key add /var/nv-tensorrt-repo-${os}-${tag}/7fa2af80.pub
 sudo apt-get update
 sudo apt-get install tensorrt
 
-# if you find the below problem
+# if you find the below problem, you should install the correct CUDA version
 The following packages have unmet dependencies:
  tensorrt : Depends: libnvinfer8 (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
             Depends: libnvinfer-plugin8 (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
@@ -149,12 +149,6 @@ The following packages have unmet dependencies:
             Depends: libnvinfer-samples (= 8.0.3-1+cuda11.3) but it is not going to be installed
             Depends: libnvinfer-doc (= 8.0.3-1+cuda11.3) but it is not going to be installed
 E: Unable to correct problems, you have held broken packages.
-
-# Go to https://developer.nvidia.com/cuda-toolkit-archive find out your CUDA version 
-# Open the deb(network)
-sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
-sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
-sudo apt install libnvinfer8=8.0.3-1+cuda11.3     *** it will not update your CUDA version but it just install the library
 ```
 
 ## Pytorch 1.4 (last version compatible with python 2.7)
