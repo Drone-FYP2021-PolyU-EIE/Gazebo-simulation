@@ -212,6 +212,8 @@ export OPENBLAS_CORETYPE=ARMV8 python3
 cd ~/Desktop
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+chmod +x install_geographiclib_datasets.sh
+chmod +x ubuntu_sim_ros_melodic.sh
 sudo bash install_geographiclib_datasets.sh
 source ubuntu_sim_ros_melodic.sh
 cd
