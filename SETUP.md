@@ -199,7 +199,8 @@ pip3 install kconfiglib
 pip3 install --user packaging
 pip3 install --user jinja2
 pip3 install --user jsonschema
-sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras
+sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras     ** for melodic
+sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras     ** for noetic
 sudo apt install gcc-arm-none-eabi
 sudo apt install gperf
 sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev zlib1g-dev
