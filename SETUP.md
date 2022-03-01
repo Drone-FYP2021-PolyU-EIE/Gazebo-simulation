@@ -100,11 +100,44 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 ## TensorRT installation
 ```
+## pip install
 python3 -m pip install numpy
 python3 -m pip install 'pycuda<2021.1'
 python3 -m pip install --upgrade setuptools pip
 python3 -m pip install nvidia-pyindex
 python3 -m pip install --upgrade nvidia-tensorrt
+
+## deb install
+# Go to https://developer.nvidia.com/nvidia-tensorrt-8x-download find out the suitable TensorRT version that correspond with your cuda version
+# After finish download
+os="ubuntuxx04"
+tag="cudax.x-trt8.x.x.x-yyyymmdd"
+sudo dpkg -i nv-tensorrt-repo-${os}-${tag}_1-1_amd64.deb
+sudo apt-key add /var/nv-tensorrt-repo-${os}-${tag}/7fa2af80.pub
+
+sudo apt-get update
+sudo apt-get install tensorrt
+
+# if you find the below problem
+The following packages have unmet dependencies:
+ tensorrt : Depends: libnvinfer8 (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvinfer-plugin8 (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvparsers8 (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvonnxparsers8 (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvinfer-bin (= 8.0.3-1+cuda11.3) but it is not going to be installed
+            Depends: libnvinfer-dev (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvinfer-plugin-dev (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvparsers-dev (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvonnxparsers-dev (= 8.0.3-1+cuda11.3) but 8.2.3-1+cuda11.4 is to be installed
+            Depends: libnvinfer-samples (= 8.0.3-1+cuda11.3) but it is not going to be installed
+            Depends: libnvinfer-doc (= 8.0.3-1+cuda11.3) but it is not going to be installed
+E: Unable to correct problems, you have held broken packages.
+
+# Go to https://developer.nvidia.com/cuda-toolkit-archive find out your CUDA version 
+# Open the deb(network)
+sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
+sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
+sudo apt install libnvinfer8=8.0.3-1+cuda11.3     *** it will not update your CUDA version but it just install the library
 ```
 
 ## Pytorch 1.4 (last version compatible with python 2.7)
