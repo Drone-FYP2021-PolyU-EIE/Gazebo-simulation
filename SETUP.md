@@ -35,6 +35,7 @@ reboot
 # Choose runfile(local) for Installer Type if you want to downgrade your CUDA version
 # Then follow the instruction from website
 
+# runfile (local)
 (Example for install CUDA 10.1 when you want to downgrade the CUDA after install nvidia-driver-460)
 wget https://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
 # If it show the gcc version fail to verify, please add --override such as sudo sh cuda_10.1.243_418.87.00_linux.run --override
@@ -74,6 +75,12 @@ sudo dpkg -i cuda-repo-ubuntu2004-11-4-local_11.4.4-470.82.01-1_amd64.deb
 sudo apt-key add /var/cuda-repo-ubuntu2004-11-4-local/7fa2af80.pub
 sudo apt-get update
 sudo apt-get -y install cuda
+
+gedit ~/.bashrc
+export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda
+source ~/.bashrc
 ```
 
 ## cuDNN installation
