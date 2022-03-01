@@ -176,6 +176,7 @@ E: Unable to correct problems, you have held broken packages.
 ## Pytorch 1.4 (last version compatible with python 2.7)
 ```
 # For CUDA 10.1
+sudo apt install python3-pip
 pip install torch==1.4.0 torchvision==0.5.0
 
 # Verify the installation
