@@ -604,4 +604,5 @@ pip3 install scikit-fmm
 ```
 pip3 install tqdm
 pip3 install seaborn
+pip3 install tensorflow-io
 ```
