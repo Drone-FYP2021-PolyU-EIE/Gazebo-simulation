@@ -134,6 +134,28 @@ sudo apt-key add /var/nv-tensorrt-repo-${os}-${tag}/7fa2af80.pub
 
 sudo apt-get update
 sudo apt-get install tensorrt
+sudo apt-get install python3-libnvinfer-dev
+sudo apt-get install uff-converter-tf
+sudo apt-get install onnx-graphsurgeon
+dpkg -l | grep TensorRT
+# it should be shown below if you install successfully
+ii  graphsurgeon-tf	8.2.0-1+cuda11.4	amd64	GraphSurgeon for TensorRT package
+ii  libnvinfer-bin		8.2.0-1+cuda11.4	amd64	TensorRT binaries
+ii  libnvinfer-dev		8.2.0-1+cuda11.4	amd64	TensorRT development libraries and headers
+ii  libnvinfer-doc		8.2.0-1+cuda11.4	all	TensorRT documentation
+ii  libnvinfer-plugin-dev	8.2.0-1+cuda11.4	amd64	TensorRT plugin libraries
+ii  libnvinfer-plugin8	8.2.0-1+cuda11.4	amd64	TensorRT plugin libraries
+ii  libnvinfer-samples	8.2.0-1+cuda11.4	all	TensorRT samples
+ii  libnvinfer8		8.2.0-1+cuda11.4	amd64	TensorRT runtime libraries
+ii  libnvonnxparsers-dev		8.2.0-1+cuda11.4	amd64	TensorRT ONNX libraries
+ii  libnvonnxparsers8	8.2.0-1+cuda11.4	amd64	TensorRT ONNX libraries
+ii  libnvparsers-dev	8.2.0-1+cuda11.4	amd64	TensorRT parsers libraries
+ii  libnvparsers8	8.2.0-1+cuda11.4	amd64	TensorRT parsers libraries
+ii  python3-libnvinfer	8.2.0-1+cuda11.4	amd64	Python 3 bindings for TensorRT
+ii  python3-libnvinfer-dev	8.2.0-1+cuda11.4	amd64	Python 3 development package for TensorRT
+ii  tensorrt		8.2.0.x-1+cuda11.4 	amd64	Meta package of TensorRT
+ii  uff-converter-tf	8.2.0-1+cuda11.4	amd64	UFF converter for TensorRT package
+ii  onnx-graphsurgeon   8.2.0-1+cuda11.4  amd64 ONNX GraphSurgeon for TensorRT package
 
 # if you find the below problem, you should install the correct CUDA version
 The following packages have unmet dependencies:
