@@ -48,6 +48,9 @@ dataset_dir = "/home/laitathei/Desktop/workspace/dataset/"
    │       ├── val.txt
    │   
    ├── labels
+   │   ├── test
+   │       ├── xxx.txt
+   |       ├──   ...
    │   ├── val 
    │       ├── xxx.txt
    |       ├──   ...
@@ -56,6 +59,9 @@ dataset_dir = "/home/laitathei/Desktop/workspace/dataset/"
    |       ├──   ...
    │   
    ├── images
+   │   ├── test
+   │       ├── xxx.jpg
+   |       ├──   ...
    │   ├── val 
    │       ├── xxx.jpg
    |       ├──   ...
@@ -63,8 +69,11 @@ dataset_dir = "/home/laitathei/Desktop/workspace/dataset/"
    │       ├── xxx.jpg
    |       ├──   ...
    ├── train.txt
+   ├── train_dummy.txt
    ├── test.txt
+   ├── test_dummy.txt
    └── valid.txt
+   └── valid_dummy.txt
    ├── split_train_val.py
    └── voc2yolo_label.py
 ```
