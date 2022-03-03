@@ -163,3 +163,12 @@ Loading weights: best.wts
 Building engine, please wait for a while...
 Build engine successfully!
 ```
+
+### 5. Inference the engine with ROS and realsensen D455 camera
+### 5.1 Put ```inference_ros_trt_v2.py``` into tensorrtx/yolov5 folder
+```
+cd ~/Desktop/workspace/tensorrtx/yolov5
+python3 inference_ros_trt_v2.py
+
+## change the realsense camera topic, PLUGIN_LIBRARY, and engine_file_path if required
+```
