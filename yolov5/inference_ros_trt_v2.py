@@ -577,7 +577,6 @@ if __name__ == "__main__":
         #thread1.start()
         #thread1.join()
         t1 = time.time()
-        fps = 0.0
         batch_image_raw, use_time = yolov5_wrapper.infer(detection.rgb_image,detection.rgb_image)
         result = batch_image_raw[0]
         print('time->{:.2f}ms'.format(use_time * 1000))
@@ -612,7 +611,7 @@ if __name__ == "__main__":
             box_array.boxes.append(box)
         box_array.header.frame_id = camera_frame_name
         box_array.header.stamp = rospy.Time.now()
-        fps  = ( fps + (1./(time.time()-t1)) ) / 2
+        fps  = (1.0/(time.time()-t1))
         #print("Inference include 2D to 3D fps: {}".format(fps))
         result = cv2.putText(result, "fps: %.2f"%(fps), (0, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         detection.box_array_pub.publish(box_array)
