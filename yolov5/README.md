@@ -133,7 +133,7 @@ python3 gen_wts.py -w ./runs/train/exp/weights/best.pt -o ./runs/train/exp/weigh
 YOLOv5 🚀 v6.1-11-g63ddb6f torch 1.10.2+cu113 CPU
 ```
 
-### 4.3 Convert best.wts->best.engine by TensorRTx cmake
+### 4.3 Convert best.wts->best.engine by TensorRTx cmake and best.engine is FP16 format
 ```
 cd ~/Desktop/workspace/tensorrtx/yolov5
 mkdir build
