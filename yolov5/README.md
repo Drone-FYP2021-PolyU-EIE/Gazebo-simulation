@@ -24,7 +24,16 @@ mkdir Main
 
 ### 2.1 Place your images and annotations into images and annotations folder respectively
 ### 2.2 Put the ```split_train_val.py``` and ```voc2yolo_label.py```into dataset folder
-### 2.3 Change classes to your own classes in ```voc2yolo_label.py``` line 8
+### 2.3 Change ```voc2yolo_label.py``` line 8-13 to your config
+```
+classes = ["obstacle", "human", "injury"]   # 改成自己的类别
+image_dir = "/home/laitathei/Desktop/workspace/dataset/images/"
+labels_dir = "/home/laitathei/Desktop/workspace/dataset/labels/"
+annotations_dir = "/home/laitathei/Desktop/workspace/dataset/annotations/"
+ImageSets_Main_dir = "/home/laitathei/Desktop/workspace/dataset/ImageSets/Main/"
+dataset_dir = "/home/laitathei/Desktop/workspace/dataset/"
+```
+
 ###
 ### 2. Datasets folder structures
 ```
