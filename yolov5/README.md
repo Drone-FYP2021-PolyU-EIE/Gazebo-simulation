@@ -122,9 +122,9 @@ Model Summary: 213 layers, 1763224 parameters, 0 gradients, 4.2 GFLOPs
 Results saved to runs/train/exp
 ```
 
-### 4. Convert best.pt->best.wts->best.engine in TensorRTx
+### 4. Convert ```best.pt```->```best.wts```->```best.engine``` in TensorRTx
 ### 4.1 Put the ```gen_wts.py``` into yolov5 folder
-### 4.2 Convert best.pt->best.wts by ```gen_wts.py```
+### 4.2 Convert ```best.wts```->```best.engine``` by ```gen_wts.py```
 ```
 cd ~/Desktop/workspace/yolov5
 python3 gen_wts.py -w ./runs/train/exp/weights/best.pt -o ./runs/train/exp/weights/best.wts
@@ -133,7 +133,7 @@ python3 gen_wts.py -w ./runs/train/exp/weights/best.pt -o ./runs/train/exp/weigh
 YOLOv5 🚀 v6.1-11-g63ddb6f torch 1.10.2+cu113 CPU
 ```
 
-### 4.3 Convert best.wts->best.engine by TensorRTx cmake and best.engine is FP16 format
+### 4.3 Convert ```best.wts```->```best.engine``` by TensorRTx cmake and best.engine is FP16 format
 ```
 cd ~/Desktop/workspace/tensorrtx/yolov5
 mkdir build
