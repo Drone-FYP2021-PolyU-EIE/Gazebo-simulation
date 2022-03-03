@@ -140,6 +140,15 @@ mkdir build
 cd build
 
 ## Place the best.wts into build folder
+## update CLASS_NUM in yololayer.h if your model is trained on custom dataset
+## before 
+static constexpr int CLASS_NUM = 80; // line 20
+static constexpr int INPUT_H = 640;  // line 21  yolov5's input height and width must be divisible by 32.
+static constexpr int INPUT_W = 640;  // line 22
+## after 
+static constexpr int CLASS_NUM = 3; // line 20
+static constexpr int INPUT_H = 640; // line 21  yolov5's input height and width must be divisible by 32.
+static constexpr int INPUT_W = 640; // line 22
 
 cmake ..
 make
