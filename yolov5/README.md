@@ -83,6 +83,8 @@ dataset_dir = "/home/laitathei/Desktop/workspace/dataset/"
 ```
 cd ~/Desktop/workspace/yolov5
 mkdir weight
+cd weight
+wget https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5n.pt
 cd ~/Desktop/workspace/yolov5/data
 gedit custom_dataset.yaml
 ```
@@ -103,4 +105,25 @@ names: ['obstacle','human', 'injury']  # class names
 ```
 cd ~/Desktop/workspace/yolov5/
 python3 train.py --weights /home/laitathei/Desktop/workspace/yolov5/weight/yolov5n.pt --cfg /home/laitathei/Desktop/workspace/yolov5/models/yolov5n.yaml --data /home/laitathei/Desktop/workspace/yolov5/data/custom_dataset.yaml --epochs 100
+```
+
+### 3.4 Train result, best.pt and last.pt are FP32 format
+```
+100 epochs completed in 0.091 hours.
+Optimizer stripped from runs/train/exp/weights/last.pt, 3.9MB
+Optimizer stripped from runs/train/exp/weights/best.pt, 3.9MB
+
+Validating runs/train/exp/weights/best.pt...
+Fusing layers... 
+Model Summary: 213 layers, 1763224 parameters, 0 gradients, 4.2 GFLOPs
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:00<00:00,  3.06it/s]                                                                      
+                 all         55        215      0.986      0.977      0.994      0.916
+            obstacle         55        215      0.986      0.977      0.994      0.916
+Results saved to runs/train/exp
+```
+
+### 4. Convert best.pt->best.wts->best.engine in TensorRTx
+### 4.1 Convert best.pt->best.wts by ```gen_wts.py```
+```
+~/Desktop/workspace/tensorrtx/yolov5
 ```
