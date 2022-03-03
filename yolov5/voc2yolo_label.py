@@ -112,20 +112,28 @@ def convert_annotation_val(image_id):
 images_train_dir = os.path.join(image_dir, "train/")
 if not os.path.isdir(images_train_dir):                                                 # create image train folder if not exist
         os.mkdir(images_train_dir)
-
 images_val_dir = os.path.join(image_dir, "val/")                                       # create image val folder if not exist
 if not os.path.isdir(images_val_dir):
         os.mkdir(images_val_dir)
+images_test_dir = os.path.join(image_dir, "test/")                                       # create image test folder if not exist
+if not os.path.isdir(images_test_dir):
+        os.mkdir(images_test_dir)
 
-
-if not os.path.exists('labels_dir'):                                                    # create label folder
+if not os.path.exists(labels_dir):                                                    # create label folder
         os.makedirs(labels_dir)
 labels_train_dir = os.path.join(labels_dir, "train/")                                   # create label train folder if not exist
 if not os.path.isdir(labels_train_dir):
         os.mkdir(labels_train_dir)
-labels_val_dir = os.path.join(labels_dir, "val/")                                      # create label train folder if not exist
+labels_val_dir = os.path.join(labels_dir, "val/")                                      # create label val folder if not exist
 if not os.path.isdir(labels_val_dir):
         os.mkdir(labels_val_dir)
+labels_test_dir = os.path.join(labels_dir, "test/")                                      # create label test folder if not exist
+if not os.path.isdir(labels_test_dir):
+        os.mkdir(labels_test_dir)
+
+train_dummy = open(dataset_dir+"train_dummy.txt", 'w')                                    # create dummy train file which did include image train folder path
+val_dummy = open(dataset_dir+"val_dummy.txt", 'w')                                      # create dummy val file which did include image val folder path
+test_dummy = open(dataset_dir+"test_dummy.txt", 'w')                                      # create dummy val file which did include image test folder path
 
 for image_set in sets:
     print(image_set)
@@ -133,12 +141,43 @@ for image_set in sets:
     list_file = open(dataset_dir+'%s.txt' % (image_set), 'w')
     for image_id in image_ids:
         if image_set=="train":
-            list_file.write(image_dir+"train/"+'%s.jpg\n' % (image_id))     # move the image into image train folder
+            train_dummy.write(image_dir+'%s.jpg\n' % (image_id))
+            list_file.write(image_dir+"train/"+'%s.jpg\n' % (image_id))     # place the file path with image train folder
             convert_annotation_train(image_id)
         if image_set=="val":
-            list_file.write(image_dir+"val/"+'%s.jpg\n' % (image_id))       # move the image into image val folder
+            train_dummy.close()
+            val_dummy.write(image_dir+'%s.jpg\n' % (image_id))
+            list_file.write(image_dir+"val/"+'%s.jpg\n' % (image_id))       # place the file path with image val folder
             convert_annotation_val(image_id)
         if image_set=="test":
-            list_file.write(image_dir+"test/"+'%s.jpg\n' % (image_id))      # move the image into image test folder
+            val_dummy.close()
+            test_dummy.write(image_dir+'%s.jpg\n' % (image_id))
+            list_file.write(image_dir+"test/"+'%s.jpg\n' % (image_id))      # place the file path with image test folder
             convert_annotation_test(image_id)
+    test_dummy.close()
     list_file.close()
+
+train_dummy.close()
+val_dummy.close()
+test_dummy.close()
+
+train_image_file = open(dataset_dir+"train_dummy.txt", 'r')
+val_image_file = open(dataset_dir+"val_dummy.txt", 'r')
+test_image_file = open(dataset_dir+"test_dummy.txt", 'r')
+
+train_image_file_line = train_image_file.readlines()
+val_image_file_line = val_image_file.readlines()
+test_image_file_line = test_image_file.readlines()
+
+for i in range(len(train_image_file_line)):
+  shutil.move(train_image_file_line[i].strip(), images_train_dir)           # move the image into image train folder
+  print("train"+str(i))
+
+for i in range(len(val_image_file_line)):
+  shutil.move(val_image_file_line[i].strip(), images_val_dir)               # move the image into image val folder
+  print("val"+str(i))
+
+for i in range(len(test_image_file_line)):
+  shutil.move(test_image_file_line[i].strip(), images_test_dir)               # move the image into image test folder
+  print("test"+str(i))
+
