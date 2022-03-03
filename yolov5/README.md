@@ -123,7 +123,24 @@ Results saved to runs/train/exp
 ```
 
 ### 4. Convert best.pt->best.wts->best.engine in TensorRTx
-### 4.1 Convert best.pt->best.wts by ```gen_wts.py```
+### 4.1 Put the ```gen_wts.py``` into yolov5 folder
+### 4.2 Convert best.pt->best.wts by ```gen_wts.py```
 ```
-~/Desktop/workspace/tensorrtx/yolov5
+cd ~/Desktop/workspace/yolov5
+python3 gen_wts.py -w ./runs/train/exp/weights/best.pt -o ./runs/train/exp/weights/best.wts
+
+## Below content will show if program success
+YOLOv5 🚀 v6.1-11-g63ddb6f torch 1.10.2+cu113 CPU
+```
+
+### 4.3 Convert best.wts->best.engine by TensorRTx cmake
+```
+cd ~/Desktop/workspace/tensorrtx/yolov5
+mkdir build
+cd build
+
+## Place the best.wts into build folder
+
+cmake ..
+make
 ```
