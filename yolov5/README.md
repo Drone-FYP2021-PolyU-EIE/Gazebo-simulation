@@ -152,4 +152,14 @@ static constexpr int INPUT_W = 640; // line 22
 
 cmake ..
 make
+
+## Below content will show if program success
+[100%] Linking CXX executable yolov5
+[100%] Built target yolov5
+
+sudo ./yolov5 -s best.wts best.engine n
+## Below content will show if program success
+Loading weights: best.wts
+Building engine, please wait for a while...
+Build engine successfully!
 ```
