@@ -422,6 +422,28 @@ sudo apt-get install ibus-cangjie
 https://medium.com/hong-kong-linux-user-group/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E8%8B%B1%E6%96%87%E4%BB%8B%E9%9D%A2%E4%B8%8B%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E5%80%89%E9%A0%A1%E9%80%9F%E6%88%90%E8%BC%B8%E5%85%A5%E6%B3%95-24d0f4bcf479
 ```
 
+## Vins-Fusion
+```
+sudo apt-get install cmake
+sudo apt-get install libgoogle-glog-dev libgflags-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libeigen3-dev
+sudo apt-get install libsuitesparse-dev
+
+tar zxf ceres-solver-2.0.0.tar.gz
+mkdir ceres-bin
+cd ceres-bin
+cmake ../ceres-solver-2.0.0
+make -j3
+make test
+make install
+
+cd ~/catkin_ws/src
+git clone https://github.com/HKUST-Aerial-Robotics/VINS-Fusion.git
+cd ../
+catkin_make
+source ~/catkin_ws/devel/setup.bash
+```
 
 ## Vrpn installation
 ```
