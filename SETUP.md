@@ -600,10 +600,22 @@ sudo apt install python3-pcl
 pip3 install scikit-fmm
 ```
 
-## YOLOv5
+## YOLOv5 (Jetson version)
 ```
+sudo apt-get install python3-pip
 pip3 install tqdm
 pip3 install seaborn
 pip3 install tensorflow-io
-pip3 install pycuda
+
+gedit ~/.bashrc
+export CPATH=$CPATH:/usr/local/cuda-10.2/targets/aarch64-linux/include
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda-10.2/targets/aarch64-linux/lib
+export CUDA_INC_DIR=/usr/local/cuda/include
+export PATH=$PATH:/usr/local/cuda/bin
+
+sudo apt-get update
+sudo apt-get install -y build-essential libatlas-base-dev
+sudo apt-get install libatlas-base-dev gfortran
+pip3 install Cython
+pip3 install pycuda --user
 ```
