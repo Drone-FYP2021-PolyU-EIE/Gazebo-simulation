@@ -7,7 +7,7 @@
 `"/detection_result/number_of_injury"`, `Int32`, come from `detection` node and refers to number of injury <br />
 `"/extract_indices/output"`, `Int32`, come from `detection` node and refers to the pointcloud that processed by filter <br />
 
-### Publisher (in navigation node)
+### Publisher (in navigation node) <br />
 `"/drone/input_postion/pose"`, `PoseStamped`, send to `control` node and refers to the position that the drone should be go <br />
 `"/desired_path/position"`, `MarkerArray`, for observe purpose and refers to the approximated obstacle centroid <br />
 `"/desired_path/validation_position"`, `MarkerArray`, for observe purpose and refers to the point around the approximated obstacle centroid <br />
