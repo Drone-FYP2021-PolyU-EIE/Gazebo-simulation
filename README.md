@@ -8,10 +8,10 @@
 `"/extract_indices/output"`, `Int32`, come from `detection` node and refers to the pointcloud that processed by filter <br />
 
 ### Publisher (in navigation node)
-`"/drone/input_postion/pose"`, `PoseStamped`, send to `control` node and refers to the position that the drone should be go
-`"/desired_path/position"`, `MarkerArray`, for observe purpose and refers to the approximated obstacle centroid
-`"/desired_path/validation_position"`, `MarkerArray`, for observe purpose and refers to the point around the approximated obstacle centroid
-`"/desired_path/local_marker"`, `MarkerArray`, for observe purpose and refers to the drone path
+`"/drone/input_postion/pose"`, `PoseStamped`, send to `control` node and refers to the position that the drone should be go <br />
+`"/desired_path/position"`, `MarkerArray`, for observe purpose and refers to the approximated obstacle centroid <br />
+`"/desired_path/validation_position"`, `MarkerArray`, for observe purpose and refers to the point around the approximated obstacle centroid <br />
+`"/desired_path/local_marker"`, `MarkerArray`, for observe purpose and refers to the drone path <br />
 
 ### Update Blog
 2021-8-26 upload ```environment.py``` which can allow the obstacle to place into the game field randomly
