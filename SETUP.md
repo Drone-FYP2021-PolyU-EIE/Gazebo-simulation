@@ -641,3 +641,8 @@ sudo apt-get install libatlas-base-dev gfortran
 pip3 install Cython
 pip3 install pycuda --user
 ```
+
+## Mediapipe (PC version)
+```
+pip3 install mediapipe
+```
