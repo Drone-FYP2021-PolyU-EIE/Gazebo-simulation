@@ -4,7 +4,11 @@ Set fan mode to cool
 #sudo /usr/sbin/nvpmodel -d <fan_mode:quiet||cool>
 sudo /usr/sbin/nvpmodel -d cool
 ```
-
+## Setup ROS for python3
+```bash
+sudo apt-get install python3-pip python3-yaml
+sudo pip3 install rospkg catkin_pkg
+```
 ## Ros setup px4     
 ``` bash
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
