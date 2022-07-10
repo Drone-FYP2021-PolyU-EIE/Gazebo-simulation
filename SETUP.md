@@ -666,6 +666,14 @@ Cflags: -I${includedir}/opencv4
 Libs: -L${libdir} -lopencv_stitching -lopencv_objdetect -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_ml -lopencv_imgproc -lopencv_flann -lopencv_core
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+pkg-config --cflags --libs opencv
+should be able to see following statement:
+-I/usr/include/opencv4 -L/usr/lib64 -lopencv_stitching -lopencv_objdetect -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_ml -lopencv_imgproc -lopencv_flann -lopencv_core
+
+pkg-config --modversion opencv
+show: 4.2.0
+
 g++ test2.cpp -o test2 `pkg-config --cflags --libs opencv`
 ./test2
 ```
