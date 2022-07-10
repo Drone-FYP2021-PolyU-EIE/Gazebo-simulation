@@ -646,3 +646,32 @@ pip3 install pycuda --user
 ```
 pip3 install mediapipe
 ```
+
+## Ubuntu OpenCV C++ environment setting (PC)
+```
+make sure you have installed eigen first, and check the version number
+sudo apt install libopencv-dev
+
+sudo gedit /usr/local/lib/pkgconfig/opencv.pc
+
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib64
+
+Name: opencv
+Description: The opencv library
+Version:4.2.0
+Cflags: -I${includedir}/opencv4
+Libs: -L${libdir} -lopencv_stitching -lopencv_objdetect -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_ml -lopencv_imgproc -lopencv_flann -lopencv_core
+
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+g++ test2.cpp -o test2 `pkg-config --cflags --libs opencv`
+./test2
+```
+
+## Ubuntu Eigen C++ environment setting (Able to run in Vscode) (PC)
+```
+make sure you have installed eigen first
+sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen
+```
