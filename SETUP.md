@@ -702,3 +702,8 @@ catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/inclu
 ```
 sudo apt-get install ros-<YOUR_ROSDISTO>-imu-tools
 ```
+
+## Install C++ plugin in Window VS code
+```
+Just follow this https://blog.csdn.net/LeonTom/article/details/123015501
+```
