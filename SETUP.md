@@ -696,6 +696,9 @@ wstool set -y src/geometry2 --git https://github.com/ros/geometry2 -v 0.6.5
 wstool up
 rosdep install --from-paths src --ignore-src -y -r
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+
+#raspberry pi version
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.7m -DPYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython3.7m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 ```
 
 ## ROS imu-tools (Complementary filter, Madgwick filter, rviz imu plugin etc.)
