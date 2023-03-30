@@ -682,6 +682,8 @@ g++ test2.cpp -o test2 `pkg-config --cflags --libs opencv`
 ```
 make sure you have installed eigen first
 sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen
+or
+g++ $(pkg-config --cflags eigen3) test.cpp -o test
 ```
 
 ## Run Geographiclib in ubuntu command line
