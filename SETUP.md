@@ -736,3 +736,8 @@ exit
 # Open the same container with more than one terminal
 docker exec -it <container_id> or <container_name> bash
 ```
+
+## Extend disk space in liunx
+```
+https://blog.csdn.net/u010801439/article/details/77676668
+```
