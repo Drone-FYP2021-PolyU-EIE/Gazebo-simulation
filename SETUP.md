@@ -712,3 +712,27 @@ sudo apt-get install ros-<YOUR_ROSDISTO>-imu-tools
 ```
 Just follow this https://blog.csdn.net/LeonTom/article/details/123015501
 ```
+
+## Docker Usage
+```
+# Create new docker container
+docker create -it --name <desired_name> <your_docker_image> -bash
+
+# Delete docker container
+docker rm <container id>
+
+# Display all docker container
+docker ps -a
+
+# Start docker container
+docker start <container_id> or <container_name>
+
+# Get into container
+docker attach <container_id> or <container_name>
+
+# Exit and shut down container
+exit
+
+# Open the same container with more than one terminal
+docker exec -it <container_id> or <container_name> bash
+```
