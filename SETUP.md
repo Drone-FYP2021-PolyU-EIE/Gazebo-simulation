@@ -741,3 +741,12 @@ docker exec -it <container_id> or <container_name> bash
 ```
 https://blog.csdn.net/u010801439/article/details/77676668
 ```
+
+## Install CH340 TTL to USB driver in linux
+```
+wget https://www.wch.cn/downloads/file/5.html?time=2023-03-17%2016:48:51&code=BBZJzJ2kw24QbUa8LUedUzVx4PRkjlwz9evWqUCb?time=2023-04-18%2017:56:51&code=Nij4leSn7aKQriDQTsGnjd1qnGHdu2lpD7qVcffe
+unzip CH340SER_LINUX
+cd CH340SER_LINUX/driver
+make
+sudo make load
+```
