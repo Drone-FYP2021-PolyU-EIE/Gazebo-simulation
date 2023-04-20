@@ -775,6 +775,7 @@ c.NotebookApp.open_browser=False
 c.NotebookApp.allow_remote_access=True
 c.NotebookApp.ip="xxx.xxx.xxx.xxx"
 c.NotebookApp.port=8888
+c.NotebookApp.notebook_dir="/home/xxx/xxx"
 
 pip3 install jupyter_nbextensions_configurator
 jupyter nbextensions_configurator enable --user
