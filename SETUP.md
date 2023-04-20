@@ -750,3 +750,33 @@ cd CH340SER_LINUX/driver
 make
 sudo make load
 ```
+
+## Install jupyter notebook
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3 python3-dev python3-pip -y
+pip3 install --upgrade pip
+pip3 install jupyter
+apt-get install vim -y
+jupyter notebook --generate-config
+ipython
+
+from notebook.auth import passwd
+passwd()
+input[1] Enter password: xxx
+input[2] Verify password: xxx
+output[3] 'example of key....................................'
+
+vi /root/.jupyter/jupyter_notebook_config.py
+
+c.NotebookApp.password=u'example of key....................................'
+c.NotebookApp.open_browser=False
+c.NotebookApp.allow_remote_access=True
+c.NotebookApp.ip="xxx.xxx.xxx.xxx"
+c.NotebookApp.port=8888
+
+pip3 install jupyter_nbextensions_configurator
+jupyter nbextensions_configurator enable --user
+jupyter notebook
+```
