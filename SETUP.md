@@ -735,6 +735,12 @@ exit
 
 # Open the same container with more than one terminal
 docker exec -it <container_id> or <container_name> bash
+
+# Create docker that can access serial port with below statment
+-v /dev/bus/usb:/dev/bus/usb --privileged
+
+# Create docker that can share the same ip address with host with below statment
+--network=host
 ```
 
 ## Extend disk space in liunx
