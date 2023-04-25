@@ -787,3 +787,20 @@ pip3 install jupyter_nbextensions_configurator
 jupyter nbextensions_configurator enable --user
 jupyter notebook
 ```
+
+## Install onnxruntime, pytorch in raspberry pi armv7l system
+```
+# find out your debian version (raspberrian OS is kind of debian)
+
+# Onnxruntime installation
+cat /etc/debian_version
+# 11.x bullseye
+# 10.x buster
+# 9.x stretch
+Go to [https://github.com/nknytk/built-onnxruntime-for-raspberrypi-linux](https://github.com/nknytk/built-onnxruntime-for-raspberrypi-linux/tree/master/wheels)
+Then, download your desired onnxruntime version wheel, and pip3 install it
+
+
+# Pytorch installation
+Go to https://github.com/KumaTea/pytorch-arm/releases to find your desired wheel and then just pip3 install it
+```
