@@ -808,5 +808,17 @@ Go to https://github.com/KumaTea/pytorch-arm/releases to find your desired wheel
 ## git process
 ```
 # To git clone complete repo without losing the submodule
-git clone --recursive 
+git clone --recursive <repo>
+
+# To git clone and add the submodule with specific branch
+git submodules add -b <branch-name>
+
+# To delete the branch locally
+git branch --delete <branch-name>
+
+# To show all the branch
+git branch -a
+
+# To synchronize local git with github
+git pull
 ```
