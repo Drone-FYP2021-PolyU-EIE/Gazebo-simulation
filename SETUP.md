@@ -835,7 +835,7 @@ git branch -r
 git branch -d -r <branch-name>
 
 # To create local branch
-git branch -f <branch-name>
+git branch <branch-name>
 
 # To synchronize local git with github
 git pull
