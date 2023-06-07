@@ -804,3 +804,9 @@ Then, download your desired onnxruntime version wheel, and pip3 install it
 # Pytorch installation
 Go to https://github.com/KumaTea/pytorch-arm/releases to find your desired wheel and then just pip3 install it
 ```
+
+## git process
+```
+# To git clone complete repo without losing the submodule
+git clone --recursive 
+```
