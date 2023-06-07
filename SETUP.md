@@ -813,11 +813,29 @@ git clone --recursive <repo>
 # To git clone and add the submodule with specific branch
 git submodules add -b <branch-name>
 
+# To switch to other local branch
+git checkout <branch-name>/<head>
+
 # To delete the branch locally
 git branch --delete <branch-name>
 
-# To show all the branch
+# To show all the branch include local and remote
 git branch -a
+
+# To show local branch
+git branch
+
+# To delete local branch
+git branch -d <branch-name>
+
+# To show remote branch
+git branch -r
+
+# To delete remote branch
+git branch -d -r <branch-name>
+
+# To create local branch
+git branch -f <branch-name>
 
 # To synchronize local git with github
 git pull
