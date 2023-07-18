@@ -814,7 +814,7 @@ Go to https://github.com/KumaTea/pytorch-arm/releases to find your desired wheel
 git clone --recursive <repo>
 
 # To git clone and add the submodule with specific branch
-git submodules add -b <branch-name> <repo>
+git submodule add -b <branch-name> <repo>
 
 # To switch to other local branch
 git checkout <branch-name>/<head>
