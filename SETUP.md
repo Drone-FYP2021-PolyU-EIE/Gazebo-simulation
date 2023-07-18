@@ -741,6 +741,9 @@ docker exec -it <container_id> or <container_name> bash
 
 # Create docker that can share the same ip address with host with below statment
 --network=host
+
+# Example
+docker create -it  -bash --name -v /dev/bus/usb:/dev/bus/usb --privileged --network=host <desired_name> <your_docker_image>
 ```
 
 ## Extend disk space in liunx
