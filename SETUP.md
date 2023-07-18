@@ -849,6 +849,7 @@ git pull
 
 ## git process
 ```
+sudo apt-get install usbutils
 lsusb
 # Bus 001 Device 021: ID 1546:01a9 U-Blox AG u-blox GNSS receiver
 # Bus 001 Device 019: ID 1a86:7523 QinHeng Electronics CH340 serial converter
