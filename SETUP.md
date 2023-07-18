@@ -847,7 +847,7 @@ git branch -m <old-name> <new-name>
 git pull
 ```
 
-## git process
+## Fix USB Port
 ```
 sudo apt-get install usbutils
 lsusb
