@@ -743,7 +743,7 @@ docker exec -it <container_id> or <container_name> bash
 --network=host
 
 # Example
-docker create -it  -bash --name -v /dev/bus/usb:/dev/bus/usb --privileged --network=host <desired_name> <your_docker_image>
+sudo docker create -it -v /dev/bus/usb:/dev/bus/usb --privileged --network=host --name rtk_boundary_following_test2 ubuntu:20.04
 ```
 
 ## Extend disk space in liunx
