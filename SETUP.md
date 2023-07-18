@@ -843,3 +843,28 @@ git branch -m <old-name> <new-name>
 # To synchronize local git with github
 git pull
 ```
+
+## git process
+```
+lsusb
+# Bus 001 Device 021: ID 1546:01a9 U-Blox AG u-blox GNSS receiver
+# Bus 001 Device 019: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+
+cd /etc/udev/rules.d
+sudo vim xxx.rules
+# KERNEL=="ttyUSB*", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="01a9", MODE:="0777", SYMLINK+="IMU"
+# KERNEL=="ttyACM*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE:="0777", SYMLINK+="RTK"
+
+# plug out usb
+sudo service udev reload
+sudo service udev restart
+# replug in usb
+
+ls /dev/IMU
+/dev/IMU
+
+# if lsusb can show CH340 serial driver but cannot display ttyUSB port
+# sudo apt remove brltty
+
+
+```
