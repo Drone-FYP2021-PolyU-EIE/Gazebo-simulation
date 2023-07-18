@@ -861,7 +861,7 @@ sudo vim xxx.rules
 
 # plug out usb
 sudo service udev reload
-sudo service udev restart
+sudo service udev restart or udevadm control --reload
 # replug in usb
 
 ls /dev/IMU
