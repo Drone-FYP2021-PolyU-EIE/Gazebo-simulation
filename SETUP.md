@@ -867,6 +867,10 @@ sudo service udev restart or udevadm control --reload
 ls /dev/IMU
 /dev/IMU
 
+ls -l /dev/ | grep ttyUSB
+lrwxrwxrwx  1 root root           7 Jul 19 10:32 IMU -> ttyUSB0
+crwxrwxrwx  1 root dialout 188,   0 Jul 19 10:32 ttyUSB0
+
 # if lsusb can show CH340 serial driver but cannot display ttyUSB port
 # sudo apt remove brltty
 
