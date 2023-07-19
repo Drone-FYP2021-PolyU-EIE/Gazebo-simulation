@@ -718,6 +718,15 @@ Just follow this https://blog.csdn.net/LeonTom/article/details/123015501
 # Create new docker container
 docker create -it --name <desired_name> <your_docker_image> -bash
 
+# Save docker container
+sudo docker export <container id> > <name you want>.tar
+
+# Import docker container as image
+sudo docker import <name you want>.tar
+
+# Name docker image that is none repository name and tag
+sudo docker tag <image id> <repository name you want>:<tag you want>
+
 # Delete docker container
 docker rm <container id>
 
