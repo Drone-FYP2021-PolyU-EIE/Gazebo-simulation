@@ -918,8 +918,8 @@ sudo vim /etc/rc.local
 # By default this script does nothing.
  
 # 下面填入开机启动的命令
-# ......
- 
+mkdir /home/pi/Desktop/testing
+echo 123 > /home/pi/Desktop/testing/test.txt
 exit 0
 ```
 ```
