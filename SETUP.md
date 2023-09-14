@@ -715,6 +715,11 @@ Just follow this https://blog.csdn.net/LeonTom/article/details/123015501
 
 ## Docker Usage
 ```
+# Open docker without sudo
+echo $USER
+sudo gpasswd -a $USER docker
+newgrp docker
+
 # Create new docker container
 docker create -it --name <desired_name> <your_docker_image> -bash
 
@@ -926,4 +931,9 @@ exit 0
 sudo chmod +x /etc/rc.local
 sudo systemctl start rc-local.service
 sudo systemctl status rc-local.service
+```
+
+## Auto start without close the program in Ubuntu
+```
+https://blog.csdn.net/weixin_46405486/article/details/122595077
 ```
