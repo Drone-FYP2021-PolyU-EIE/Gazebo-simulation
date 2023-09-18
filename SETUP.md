@@ -937,3 +937,18 @@ sudo systemctl status rc-local.service
 ```
 https://blog.csdn.net/weixin_46405486/article/details/122595077
 ```
+
+## Git branch 
+```
+# create local branch
+git checkout -b <new branch name>
+
+# upload local branch to global branch
+git push --set-upstream origin <new branch name>
+
+# add the new thing for upload git branch
+git add .
+
+# comment the commitment
+git commit
+```
