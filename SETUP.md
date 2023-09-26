@@ -952,3 +952,8 @@ git add .
 # comment the commitment
 git commit
 ```
+
+## Setup Wifi hotspot in Ubuntu 20.04
+```
+https://blog.csdn.net/weixin_43982238/article/details/132285969
+```
