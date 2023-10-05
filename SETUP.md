@@ -957,3 +957,15 @@ git commit
 ```
 https://blog.csdn.net/weixin_43982238/article/details/132285969
 ```
+
+## Setup ssh key for remote ssh (Window connect Ubuntu)
+```
+ssh-keygen -t rsa
+cd .ssh
+scp -p ./id_rsa.pub pi@10.42.0.1:/home/pi/.ssh/authorized_keys
+ssh pi@10.42.0.1
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+exit()
+ssh pi@10.42.0.1
+```
