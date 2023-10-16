@@ -873,6 +873,12 @@ sudo vim xxx.rules
 # KERNEL=="ttyUSB*", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="01a9", MODE:="0777", SYMLINK+="IMU"
 # KERNEL=="ttyACM*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE:="0777", SYMLINK+="RTK"
 
+# if using same ch340 driver, try below
+# find the usb port via ```ls -l /dev | grep ttyUSB```
+# udevadm info --attribute-walk --name=/dev/ttyUSB0 |grep KERNELS
+# KERNELS=="1.1-1", MODE:="0777", SYMLINK+="IMU"
+# KERNELS=="1.1-4", MODE:="0777", SYMLINK+="RTK"
+
 # plug out usb
 sudo service udev reload
 sudo service udev restart or udevadm control --reload
