@@ -791,6 +791,8 @@ input[1] Enter password: xxx
 input[2] Verify password: xxx
 output[3] 'example of key....................................'
 
+or jupyter notebook password
+
 vi /root/.jupyter/jupyter_notebook_config.py
 
 c.NotebookApp.password=u'example of key....................................'
